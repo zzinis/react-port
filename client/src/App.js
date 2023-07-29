@@ -8,10 +8,11 @@ function App() {
 	return (
 		<>
 			<BrowserRouter>
-				<Header />
 				<Routes>
-					<Route path='/'></Route>
-					<Route path='/visual' element={<Visual />}></Route>
+					<Route path='/'>
+						<Header />
+						<Visual />
+					</Route>
 				</Routes>
 				<Footer />
 			</BrowserRouter>

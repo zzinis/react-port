@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Layout({ name }) {
+function Layout({ name, children }) {
     return (
         <>
             <section className={`content ${name}`}>
@@ -8,6 +8,7 @@ function Layout({ name }) {
 
                 <div className="inner">
                     <h1>{name}</h1>
+                    {children}
                 </div>
 
 

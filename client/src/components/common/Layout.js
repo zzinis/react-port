@@ -1,20 +1,18 @@
-import React from 'react'
+import React, { useRef } from 'react';
 
 function Layout({ name, children }) {
-    return (
+	const frame = useRef(null);
 
-        <section className={`content ${name}`} ref={frame}>
-            <figure></figure>
+	return (
+		<section className={`content ${name}`} ref={frame}>
+			<figure></figure>
 
-            <div className="inner">
-                <h1>{name}</h1>
-                {children}
-            </div>
-
-
-        </section>
-
-    )
+			<div className='inner'>
+				<h1>{name}</h1>
+				{children}
+			</div>
+		</section>
+	);
 }
 
-export default Layout
+export default Layout;

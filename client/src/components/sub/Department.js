@@ -1,12 +1,14 @@
-import React from 'react'
-import Layout from '../common/Layout'
+import React, { useState } from 'react';
+import Layout from '../common/Layout';
 
 function Department() {
-    return (
-        <Layout name={'Department'}>
-            <h2>department</h2>
-        </Layout>
-    )
+	const [Members, setMembers] = useState([]);
+
+	return (
+		<Layout name={'Department'}>
+			<h2>department</h2>
+		</Layout>
+	);
 }
 
-export default Department
+export default Department;

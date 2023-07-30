@@ -1,0 +1,24 @@
+{
+  "members": [
+    {
+      "name": "Kevin",
+      "position": "President",
+      "pic": "member1.jpg"
+    },
+    {
+      "name": "John",
+      "position": "Vice President",
+      "pic": "member2.jpg"
+    },
+    {
+      "name": "Emily",
+      "position": "Secretary",
+      "pic": "member3.jpg"
+    },
+    {
+      "name": "Michael",
+      "position": "Treasurer",
+      "pic": "member4.jpg"
+    }
+  ]
+}

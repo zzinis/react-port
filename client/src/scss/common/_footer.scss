@@ -1,0 +1,41 @@
+footer {
+	background-color: #333;
+	color: #fff;
+	padding: 20px 0;
+	text-align: center;
+
+	.footer-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 1200px;
+		margin: 0 auto;
+
+		p {
+			margin: 0;
+		}
+
+		ul {
+			list-style: none;
+			display: flex;
+			margin: 0;
+
+			li {
+				margin-right: 10px;
+
+				a {
+					color: #fff;
+					text-decoration: none;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}

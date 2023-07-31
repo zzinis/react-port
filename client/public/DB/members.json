@@ -19,6 +19,16 @@
       "name": "Michael",
       "position": "Treasurer",
       "pic": "member4.jpg"
+    },
+    {
+      "name": "lorem",
+      "position": "Treasurer",
+      "pic": "member5.jpg"
+    },
+    {
+      "name": "lorem1",
+      "position": "Treasurer",
+      "pic": "member6.jpg"
     }
   ]
 }

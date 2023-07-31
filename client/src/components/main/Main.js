@@ -1,7 +1,14 @@
 import React from 'react';
+import Visual from './Visual';
+import News from './News';
 
 function Main() {
-	return <main></main>;
+	return (
+		<>
+			<Visual />
+			<News />
+		</>
+	);
 }
 
 export default Main;

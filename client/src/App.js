@@ -4,6 +4,9 @@ import Footer from './components/common/Footer';
 import Header from './components/common/Header';
 import Department from './components/sub/Department';
 import './scss/style.scss';
+import News from './components/main/News';
+import Visual from './components/main/Visual';
+import Main from './components/main/Main';
 
 function App() {
 	return (
@@ -11,6 +14,8 @@ function App() {
 			<BrowserRouter>
 				<Header />
 				<Routes>
+					<Route exact path='/' element={<Main />}>
+					</Route>
 					<Route path='/department' element={Department}></Route>
 				</Routes>
 				<Footer />

@@ -14,7 +14,7 @@ function Department() {
 
 	return (
 		<Layout name={'Department'}>
-			<p>회사 조직소개 페이지입니다.</p>
+
 			{Members.map((member, idx) => {
 				return (
 					<article key={idx}>

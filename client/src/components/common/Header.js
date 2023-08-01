@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass, faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 function Header() {
 	const [isMenuOpen, setMenuOpen] = useState(false);
@@ -121,33 +124,33 @@ function Header() {
 						<p>
 							<input type="text" id="searchText" />
 							<button className="searchBtn" type="submit">
-								<i className="fas fa-search"></i>
+								<FontAwesomeIcon icon={faMagnifyingGlass} />
 							</button>
 						</p>
 					</div>
 					<ul className="util">
 						<li>
 							<a href="#">
-								<i className="far fa-heart"></i>
+								<FontAwesomeIcon icon={faHeart} />
 							</a>
 						</li>
 						<li>
 							<a href="join.html">
-								<i className="far fa-user"></i>
+								<FontAwesomeIcon icon={faUser} />
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<i className="fab fab fab fab fa-facebook-square"></i>
+								<FontAwesomeIcon icon={faFacebook} />
 							</a>
 						</li>
 					</ul>
 				</nav>
 
-				<a href="#" className="btnCall">
+				<a href="#" className={`btnCall ${isMenuOpen ? 'on' : ''}`} onClick={toggleMenu}>
 					<span>메뉴호출</span>
 				</a>
-				<nav className="menuMo">
+				<nav className={`menuMo ${isMenuOpen ? 'on' : ''}`}>
 					<h1>
 						<a href="index.html">PORTFOLIO</a>
 					</h1>

@@ -349,6 +349,9 @@
 					}
 				}
 			}
+			&.on {
+				max-height: 300px;
+			}
 			.form-text {
 				position: absolute;
 				top: 50%;
@@ -525,6 +528,43 @@
 
 			&.on {
 				right: 0;
+			}
+		}
+	}
+}
+
+/*tablet*/
+
+@media screen and (max-width: $tablet) {
+	#header {
+		width: 100%;
+
+		.inner {
+			width: 100%;
+
+			> h1 {
+				position: absolute;
+				left: 3%;
+				top: 50%;
+				transform: translateY(-50%);
+				> a {
+					font: bold 24px/1 "Open Sans", sans-serif;
+					color: #1f2120;
+				}
+			}
+
+			.menuWeb {
+				display: none;
+			}
+
+			.btnCall {
+				display: block;
+				&.on {
+					&::before,
+					&::after {
+						background: #fff;
+					}
+				}
 			}
 		}
 	}

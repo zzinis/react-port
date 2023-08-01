@@ -11,11 +11,11 @@ function Header() {
 	return (
 		<header id='header'>
 			<div className="inner">
-				<h1><a href="#">PORTFOLIO</a></h1>
+				<h1><a href="/">PORTFOLIO</a></h1>
 				<nav className={`menuWeb ${isMenuOpen ? 'on' : ''}`}>
 					<ul id="gnb">
 						<li className="m_depart">
-							<a href="department.html">DEPARTMENT</a>
+							<a href="department">DEPARTMENT</a>
 							<div className="sub">
 								<div className="wrap">
 									<div className="sub_con1">
@@ -37,7 +37,7 @@ function Header() {
 							</div>
 						</li>
 						<li className="m_youtube">
-							<a href="youtube.html">YOUTUBE</a>
+							<a href="youtube">YOUTUBE</a>
 							<div className="sub">
 								<div className="wrap">
 									<div className="sub_con1">
@@ -54,7 +54,7 @@ function Header() {
 							</div>
 						</li>
 						<li className="m_community">
-							<a href="community.html">COMMUNITY</a>
+							<a href="community">COMMUNITY</a>
 							<div className="sub">
 								<div className="wrap">
 									<article>
@@ -79,7 +79,7 @@ function Header() {
 							</div>
 						</li>
 						<li className="m_gallery">
-							<a href="gallery.html">GALLERY</a>
+							<a href="gallery">GALLERY</a>
 							<div className="sub">
 								<div className="wrap">
 									<div className="sub_con1">
@@ -98,7 +98,7 @@ function Header() {
 							</div>
 						</li>
 						<li className="m_location">
-							<a href="location.html">LOCATION</a>
+							<a href="location">LOCATION</a>
 							<div className="sub">
 								<div className="wrap">
 									<div className="sub_con1">
@@ -152,24 +152,24 @@ function Header() {
 				</a>
 				<nav className={`menuMo ${isMenuOpen ? 'on' : ''}`}>
 					<h1>
-						<a href="index.html">PORTFOLIO</a>
+						<a href="/">PORTFOLIO</a>
 					</h1>
 
 					<ul id="gnbMo">
 						<li>
-							<a href="department.html">DEPARTMENT</a>
+							<a href="department">DEPARTMENT</a>
 						</li>
 						<li>
-							<a href="youtube.html">YOUTUBE</a>
+							<a href="youtube">YOUTUBE</a>
 						</li>
 						<li>
-							<a href="community.html">COMMUNITY</a>
+							<a href="community">COMMUNITY</a>
 						</li>
 						<li>
-							<a href="gallery.html">GALLERY</a>
+							<a href="gallery">GALLERY</a>
 						</li>
 						<li>
-							<a href="location.html">LOCATION</a>
+							<a href="location">LOCATION</a>
 						</li>
 					</ul>
 				</nav>

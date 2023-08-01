@@ -35,3 +35,45 @@
 		transform: translateY(0px);
 	}
 }
+
+//tablet
+@media screen and (max-width: $tablet) {
+	.content {
+		figure {
+			height: 150px;
+		}
+		> .inner {
+			padding: 70px 10vw;
+
+			h1 {
+				font: 40px/1 "arial";
+
+				&::before {
+					width: 60px;
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+}
+
+//mobile
+@media screen and (max-width: $mobile) {
+	.content {
+		figure {
+			display: none;
+		}
+		> .inner {
+			padding: 50px 10vw;
+
+			h1 {
+				font: 30px/1 "arial";
+
+				&::before {
+					width: 30px;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}

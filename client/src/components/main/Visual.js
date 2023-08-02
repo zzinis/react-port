@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaPlayCircle, FaChevronRight } from 'react-icons/fa';
 
 
 function Visual() {
+	// 슬라이드 이미지 다르게
+	const [leftSlide, setLeftSlide] = useState(0);
+	const [rightSlide, setRightSlide] = useState(0);
+	const leftImages = ['img/b1.jpg', 'img/b5.jpg', 'img/c4.jpg'];
+	const rightImages = ['img/b5.jpg', 'img/c4.jpg', 'img/b1.jpg'];
+
+	const nextSlide = () => {
+		setLeftSlide((prevLeftSlide) => (prevLeftSlide + 1) % leftImages.length);
+		setRightSlide((prevRightSlide) => (prevRightSlide + 1) % rightImages.length);
+	};
+	useEffect(() => {
+		// Automatically change slides every 5 seconds
+		const interval = setInterval(nextSlide, 5000);
+
+		return () => {
+			clearInterval(interval);
+		};
+	}, []);
 	return (
 		<figure id="visual">
 			<div className="inner">
@@ -20,7 +38,7 @@ function Visual() {
 						<a href="/"><FaPlayCircle /></a>
 						<p>Video about product</p>
 						<div className="pic">
-							<img src="img/b1.jpg" alt="" />
+							<img src={leftImages[leftSlide]} alt="" />
 						</div>
 					</div>
 					<div className="right">
@@ -35,11 +53,13 @@ function Visual() {
 								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, ipsum.</p>
 							</article>
 						</div>
-						<div className="num">01.</div>
+						<div className="num">{`0${rightSlide + 1}.`}</div>
 						<div className="pic">
-							<img src="img/b1.jpg" alt="" />
+							<img src={rightImages[rightSlide]} alt="" />
 							<a href="#" className="prev"></a>
-							<a href="#" className="next"></a>
+							<a href="#" className="next" onClick={nextSlide}>
+								<FaChevronRight />
+							</a>
 						</div>
 					</div>
 				</div>

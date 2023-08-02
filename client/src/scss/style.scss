@@ -6,5 +6,10 @@ $mobile: 759px;
 @import "common/footer";
 @import "common/layout";
 
+//main scss
+@import "main/visual";
+@import "main/popup";
+@import "main/news";
+@import "main/introduce";
 //sub scss
 @import "sub/department";

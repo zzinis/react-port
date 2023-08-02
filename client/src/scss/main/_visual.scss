@@ -1,0 +1,188 @@
+#visual {
+	width: 100%;
+	height: calc(100vh - 151px);
+	position: relative;
+
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+
+		.wrap {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			.left {
+				width: 29%;
+				height: 65vh;
+				padding-top: 40px;
+				border-bottom: 1px solid #bbb;
+				margin-right: 2%;
+				.txt {
+					svg text {
+						font: 42px/1 "Overpass";
+						fill: #fff;
+						stroke: #111;
+						stroke-width: 2;
+						stroke-linejoin: miter;
+						stroke-linecap: square;
+						stroke-dasharray: 240px;
+						stroke-dashoffset: 240px;
+						transform: scale(0.96);
+						transform-origin: center center;
+						animation: ani 3s alternate-reverse linear infinite;
+					}
+					@keyframes ani {
+						0% {
+							stroke-dashoffset: 240px;
+							transition: stroke-dashoffset 1s 1s, fill 1s 0s;
+						}
+
+						100% {
+							fill: #111;
+							stroke-width: 1;
+							stroke-dashoffset: 0px;
+							stroke-dashoffset: 0;
+							transition: stroke-dashoffset 1s 0s, fill 1s 1s;
+						}
+					}
+				}
+
+				a {
+					color: #333;
+					display: inline-block;
+					font-size: 22px;
+					margin: 0px 10px 100px 10px;
+					transition: 0.5s ease-in-out;
+
+					&:hover {
+						transform: scale(1.2);
+					}
+				}
+				> p {
+					display: inline-block;
+					font: 16px/1 "arial";
+					color: #333;
+				}
+
+				> .pic {
+					width: 100%;
+					height: 200px;
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+			}
+			.right {
+				width: 69%;
+				height: 65vh;
+				padding-top: 40px;
+				border-bottom: 1px solid #bbb;
+				position: relative;
+
+				h2 {
+					font: bold 18px/1 "arial";
+					color: #333;
+					margin-bottom: 10px;
+				}
+
+				.txtbox {
+					width: 75%;
+					margin-bottom: 100px;
+					display: flex;
+					article {
+						margin-right: 20px;
+						p {
+							font: 15px/1.4 "arial";
+							color: #999;
+						}
+					}
+				}
+				.num {
+					text-align: right;
+					font: 50px/1 "arial";
+				}
+
+				.pic {
+					width: 100%;
+					height: 200px;
+					margin-top: 20px;
+					position: relative;
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+
+					.prev {
+						position: absolute;
+						top: 50%;
+						left: 40px;
+						transform: translateX(-50%);
+					}
+					.next {
+						position: absolute;
+						top: 50%;
+						right: 30px;
+						transform: translateX(-50%);
+					}
+				}
+			}
+		}
+
+		.bottom {
+			width: 100%;
+			height: 10vh;
+			display: flex;
+			padding: 30px 20px;
+
+			.first {
+				width: 80%;
+				article {
+					width: 100px;
+					height: 50px;
+					display: inline-block;
+
+					> p {
+						font: bold 15px/1 "arial";
+						margin-bottom: 5px;
+					}
+					> span {
+						font: 16px/1 "arial";
+						color: #999;
+					}
+				}
+			}
+
+			.second {
+				width: 20%;
+				transition: 0.5s;
+				p {
+					display: inline-block;
+					margin-right: 20px;
+					font: 15px/1 "arial";
+					color: #999;
+				}
+				.line {
+					display: inline-block;
+					width: 80px;
+					height: 2px;
+					background-color: #bbb;
+					vertical-align: middle;
+					margin-right: 20px;
+				}
+				a {
+					color: #bbb;
+					display: inline-block;
+				}
+
+				&:hover {
+					transform: translate(10px, 0);
+				}
+			}
+		}
+	}
+}

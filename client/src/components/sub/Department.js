@@ -14,6 +14,8 @@ function Department() {
 
 	return (
 		<Layout name={'Department'}>
+			<h1>Company</h1>
+			<p>Lorem, ipsum.</p>
 
 			{Members.map((member, idx) => {
 				return (

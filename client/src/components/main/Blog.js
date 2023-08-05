@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Blog() {
+    const [sectionHeight, setSectionHeight] = useState(1000); // 초기 높이 값 설정
+
+    // const increaseHeight = () => {
+    //     setSectionHeight(sectionHeight + 100); // 높이 증가
+    // };
     return (
-        <section id="blog" className="myScroll">
+        <section id="blog" className="myScroll" style={{ height: sectionHeight + 'px' }}>
             <div className="inner">
                 <h1>BlOG</h1>
                 <div className="wrap">

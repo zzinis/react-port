@@ -8,6 +8,7 @@ function Header() {
 	const toggleMenu = () => {
 		setMenuOpen(!isMenuOpen);
 	}
+
 	return (
 		<header id='header'>
 			<div className="inner">

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaPlayCircle, FaChevronRight } from 'react-icons/fa';
 
+
 function Visual() {
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const leftImages = ['img/b1.jpg', 'img/b5.jpg', 'img/c4.jpg'];
@@ -83,7 +84,7 @@ function Visual() {
 						</article>
 						<article>
 							<p>Awward</p>
-							<span>May 2021</span>
+							<span>May 2023</span>
 						</article>
 						<article>
 							<p>lorem</p>

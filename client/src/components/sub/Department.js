@@ -17,6 +17,35 @@ function Department() {
 			<h1>Company</h1>
 			<p>Lorem, ipsum.</p>
 
+			<div className="top">
+				<div className="wrap">
+					<div className="pic">
+						<img src="img/b1.jpg" alt="" />
+					</div>
+					<div className="txt">
+						<h2>Welcome to Lorem</h2>
+						<article>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Quo ducimus quam nostrum iusto soluta nesciunt, fugiat
+								molestias facere voluptatem non ipsam vero veritatis
+								autem numquam? Deleniti autem natus, officiis distinctio
+								aperiam libero minus magni minima, odio, consequuntur amet
+								accusamus rerum!
+							</p>
+						</article>
+						<article>
+							<span>
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+								Aliquid, voluptatem adipisci dolorum autem voluptates eos
+								debitis sunt quia neque a, ratione eaque molestias
+								voluptate, itaque commodi expedita temporibus libero quos.
+							</span>
+						</article>
+					</div>
+				</div>
+			</div>
+
 			{Members.map((member, idx) => {
 				return (
 					<article key={idx}>

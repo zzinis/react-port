@@ -4,8 +4,67 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-content: flex-start;
+		.top {
+			width: 100%;
+			height: 500px;
+			position: relative;
+			margin-top: 50px;
 
-		article {
+			.wrap {
+				display: flex;
+				position: relative;
+				width: 100%;
+				height: 100%;
+
+				.pic {
+					width: 45%;
+					height: 350px;
+					margin-right: 4%;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+
+				.txt {
+					width: 50%;
+					padding: 0px 20px;
+					h2 {
+						font: bold 20px/1.3 "Oxygen", sans-serif;
+						color: #222;
+						margin-bottom: 30px;
+						border-bottom: 1px solid #bbb;
+
+						&::after {
+							content: "";
+							display: block;
+							width: 170px;
+							height: 3px;
+							background-color: #fd967c;
+							// background-color: #5faaff;
+							margin-bottom: -2px;
+						}
+					}
+
+					> article {
+						margin-bottom: 30px;
+
+						p {
+							font: 15px/1.6 "Overpass", sans-serif;
+							color: #222;
+						}
+						span {
+							font: 18px/1.5 "Overpass", sans-serif;
+							color: #222;
+						}
+					}
+				}
+			}
+		}
+
+		> article {
 			width: 30%;
 			margin-bottom: 60px;
 

@@ -68,7 +68,22 @@ function Department() {
 				</div>
 			</div>
 
-
+			<div className="company">
+				<h3>Time Line</h3>
+				<div className="wrap">
+					{timelineData.map((item, index) => (
+						<div className="timeline" key={index}>
+							<div className="date">
+								<p>{item.date}</p>
+							</div>
+							<div className="content">
+								<h4>{item.title}</h4>
+								<span>{item.description}</span>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
 
 			{Members.map((member, idx) => {
 				return (

@@ -3,6 +3,28 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 function Department() {
+	const timelineData = [
+		{
+			date: '2020 - PRESENT',
+			title: 'Author @ Lorem',
+			description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias magni facilis in dolor amet perspiciatis',
+		},
+		{
+			date: '2018 - 2020',
+			title: 'Web Designer @ Lorem',
+			description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias magni facilis in dolor amet perspiciatis',
+		},
+		{
+			date: '2015 - 2018',
+			title: 'Developer @ Lorem',
+			description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias magni facilis in dolor amet perspiciatis',
+		},
+		{
+			date: '2013 - 2015',
+			title: 'Photographer @ Lorem',
+			description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias magni facilis in dolor amet perspiciatis',
+		},
+	];
 	const [Members, setMembers] = useState([]);
 	console.log(Members);
 
@@ -45,6 +67,8 @@ function Department() {
 					</div>
 				</div>
 			</div>
+
+
 
 			{Members.map((member, idx) => {
 				return (

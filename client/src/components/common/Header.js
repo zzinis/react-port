@@ -136,7 +136,7 @@ function Header() {
 							</a>
 						</li>
 						<li>
-							<a href="join.html">
+							<a href="join">
 								<FontAwesomeIcon icon={faUser} />
 							</a>
 						</li>

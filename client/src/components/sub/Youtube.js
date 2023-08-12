@@ -24,8 +24,10 @@ function Youtube() {
                 <article key={idx}>
                     <img src={vid.snippet.thumbnails.standard.url} alt={vid.snippet.title} />
                     <h2>{vid.snippet.title}</h2>
-                    <p>{vid.snippet.description}</p>
-                    <span>{vid.snippet.publishedAt}</span>
+                    <p> {vid.snippet.description.length > 50
+                        ? vid.snippet.description.substr(0, 50) + '...'
+                        : vid.snippet.description}</p>
+                    <span>{vid.snippet.publishedAt.substr(0, 10)}</span>
                 </article>
             );
         })}

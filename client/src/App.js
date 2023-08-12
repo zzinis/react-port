@@ -11,6 +11,7 @@ import News from './components/main/News';
 import Visual from './components/main/Visual';
 import Main from './components/main/Main';
 import Location from './components/sub/Location';
+import Join from './components/sub/Join';
 
 
 
@@ -26,6 +27,7 @@ function App() {
 					<Route path='/youtube' element={<Youtube />}></Route>
 					<Route path='/community' element={<Coummunity />}></Route>
 					<Route path='/location' element={<Location />}></Route>
+					<Route path='/join' element={<Join />}></Route>
 				</Routes>
 				<Footer />
 			</BrowserRouter>

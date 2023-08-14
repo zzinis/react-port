@@ -19,18 +19,28 @@ function Youtube() {
     return <Layout name={'Youtube'}>
         <h1>Youtube</h1>
         <p>Lorem, ipsum.</p>
-        {Vids.map((vid, idx) => {
-            return (
-                <article key={idx}>
-                    <img src={vid.snippet.thumbnails.standard.url} alt={vid.snippet.title} />
-                    <h2>{vid.snippet.title}</h2>
-                    <p> {vid.snippet.description.length > 50
-                        ? vid.snippet.description.substr(0, 50) + '...'
-                        : vid.snippet.description}</p>
-                    <span>{vid.snippet.publishedAt.substr(0, 10)}</span>
-                </article>
-            );
-        })}
+        <div className="wrap">
+            {Vids.map((vid, idx) => {
+                return (
+                    <article key={idx}>
+                        <a href="#">
+                            <img src={vid.snippet.thumbnails.standard.url} alt={vid.snippet.title} />
+                        </a>
+
+                        <div className="con">
+                            <h2>{vid.snippet.title}</h2>
+                            <p> {vid.snippet.description.length > 50
+                                ? vid.snippet.description.substr(0, 50) + '...'
+                                : vid.snippet.description}</p>
+                            <span>{vid.snippet.publishedAt.substr(0, 10)}</span>
+                        </div>
+
+                    </article>
+
+                );
+            })}
+        </div>
+
 
     </Layout>
 }

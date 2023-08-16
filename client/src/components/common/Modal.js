@@ -1,10 +1,20 @@
-const Modal = () => {
+import { forwardRef, useState } from 'react';
+
+const Modal = forwardRef((props, ref) => {
+    const [Open, setOpen] = useState(false);
+
     return (
-        <aside className='modal'>
-            <div className='con'></div>
-            <span className='close'>close</span>
-        </aside>
+        <>
+            {Open && (
+                <aside className='modal' ref={ref}>
+                    <div className='con'></div>
+                    <span className='close' onClick={() => setOpen(false)}>
+                        close
+                    </span>
+                </aside>
+            )}
+        </>
     );
-};
+});
 
 export default Modal;

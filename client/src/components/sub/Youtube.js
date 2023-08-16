@@ -29,7 +29,7 @@ function Youtube() {
                     {Vids.map((vid, idx) => {
                         return (
                             <article key={idx}>
-                                <a href="#">
+                                <a href="#" onClick={() => console.log(modal)}>
                                     <img src={vid.snippet.thumbnails.standard.url} alt={vid.snippet.title} />
                                 </a>
                                 <div className="con">

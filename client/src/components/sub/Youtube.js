@@ -7,6 +7,8 @@ import { useEffect, useState, useRef } from 'react';
 
 function Youtube() {
     const modal = useRef(null);
+    const [Index, setIndex] = useState(0);
+
 
 
     const [Vids, setVids] = useState([]);

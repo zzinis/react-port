@@ -52,7 +52,7 @@ function Youtube() {
 
             </Layout>
             <Modal ref={modal}>
-                <iframe title={Vids[0]?.id} src={`https://www.youtube.com/embed/${Vids[0]?.snippet.resourceId.videoId}`}></iframe>
+                <iframe title={Vids[Index]?.id} src={`https://www.youtube.com/embed/${Vids[Index]?.snippet.resourceId.videoId}`}></iframe>
             </Modal>
         </>
     )

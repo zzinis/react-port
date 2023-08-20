@@ -34,7 +34,7 @@ function Visual() {
 	}, []);
 
 	return (
-		<figure id="visual">
+		<figure id="visual" className='myScroll'>
 			<div className="inner">
 				<div className="wrap">
 					<div className={`left ${currentSlide === 0 ? 'active' : ''}`}>

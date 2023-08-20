@@ -12,16 +12,18 @@ function Youtube() {
 
 
     const [Vids, setVids] = useState([]);
-    useEffect(() => {
+    const fetchYoutube = async () => {
         const key = 'AIzaSyBWdI1Ln_7CG7buBj84llJDk9-oaDu8NCE';
         const list = 'PL7bRBTzgXVleF23FJ2Y9VsfdVcDA4kg83';
         const num = 6;
         const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`;
-        axios.get(url).then((data) => {
-            console.log(data.data.items);
-            setVids(data.data.items);
-        });
-    }, []);
+        // axios.get(url).then((data) => {
+        //     console.log(data.data.items);
+        //     setVids(data.data.items);
+        // });
+        const result = await axios.get(url);
+        setVids(result.data.items);
+    };
     return (
         <>
             <Layout name={'Youtube'}>

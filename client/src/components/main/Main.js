@@ -13,6 +13,13 @@ import { useRef, useEffect } from 'react';
 function Main() {
 	const main = useRef(null);
 	let pos = useRef([]);
+
+	const getPos = () => {
+		pos.current = [];
+		const secs = main.current.querySelectorAll('.myScroll');
+		for (const sec of secs) pos.current.push(sec.offsetTop);
+		console.log(pos.current);
+	};
 	return (
 		<>
 			<Visual />

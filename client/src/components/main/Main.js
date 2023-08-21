@@ -20,6 +20,10 @@ function Main() {
 		for (const sec of secs) pos.current.push(sec.offsetTop);
 		console.log(pos.current);
 	};
+	useEffect(() => {
+		getPos();
+		window.addEventListener('resize', getPos);
+	}, []);
 	return (
 		<>
 			<Visual />

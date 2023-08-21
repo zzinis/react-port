@@ -7,8 +7,12 @@ import About from './About';
 import Blog from './Blog';
 import Content from './Content';
 import Comment from './Comment';
+import { useRef, useEffect } from 'react';
+
 
 function Main() {
+	const main = useRef(null);
+	let pos = useRef([]);
 	return (
 		<>
 			<Visual />

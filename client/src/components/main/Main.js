@@ -15,6 +15,7 @@ function Main() {
 	let pos = useRef([]);
 
 	const getPos = () => {
+		console.log('getPos');
 		pos.current = [];
 		const secs = main.current.querySelectorAll('.myScroll');
 		for (const sec of secs) pos.current.push(sec.offsetTop);
@@ -23,9 +24,12 @@ function Main() {
 	useEffect(() => {
 		getPos();
 		window.addEventListener('resize', getPos);
+		return () => {
+			window.removeEventListener('resize', getPos);
+		}
 	}, []);
 	return (
-		<>
+		<main ref={'main'}>
 			<Visual />
 			<Popup />
 			<News />
@@ -34,7 +38,7 @@ function Main() {
 			<Blog />
 			<Content />
 			<Comment />
-		</>
+		</main>
 	);
 }
 

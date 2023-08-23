@@ -8,28 +8,29 @@ import Blog from './Blog';
 import Content from './Content';
 import Comment from './Comment';
 import { useRef, useEffect } from 'react';
+import Btns from './Btns';
 
 
 function Main() {
-	const main = useRef(null);
-	let pos = useRef([]);
+	// const main = useRef(null);
+	// let pos = useRef([]);
 
-	const getPos = () => {
-		console.log('getPos');
-		pos.current = [];
-		const secs = main.current.querySelectorAll('.myScroll');
-		for (const sec of secs) pos.current.push(sec.offsetTop);
-		console.log(pos.current);
-	};
-	useEffect(() => {
-		getPos();
-		window.addEventListener('resize', getPos);
-		return () => {
-			window.removeEventListener('resize', getPos);
-		}
-	}, []);
+	// const getPos = () => {
+	// 	console.log('getPos');
+	// 	pos.current = [];
+	// 	const secs = main.current.querySelectorAll('.myScroll');
+	// 	for (const sec of secs) pos.current.push(sec.offsetTop);
+	// 	console.log(pos.current);
+	// };
+	// useEffect(() => {
+	// 	getPos();
+	// 	window.addEventListener('resize', getPos);
+	// 	return () => {
+	// 		window.removeEventListener('resize', getPos);
+	// 	}
+	// }, []);
 	return (
-		<main ref={'main'}>
+		<main>
 			<Visual />
 			<Popup />
 			<News />
@@ -38,6 +39,7 @@ function Main() {
 			<Blog />
 			<Content />
 			<Comment />
+			<Btns />
 		</main>
 	);
 }

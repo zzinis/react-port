@@ -19,7 +19,13 @@ function Btns() {
         };
     }, []);
     return (
-        <div>Btns</div>
+        <ul className='btnNavi' ref={btnRef}>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     )
 }
 

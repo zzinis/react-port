@@ -22,11 +22,11 @@ function Btns() {
     }, []);
     return (
         <ul className='btnNavi' ref={btnRef}>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            {Array(Num)
+                .fill()
+                .map((_, idx) => {
+                    return <li key={idx}></li>;
+                })}
         </ul>
     )
 }

@@ -13,6 +13,17 @@ function Btns() {
         setNum(pos.current.length);
 
     };
+    const activation = () => {
+        const scroll = window.scrollY;
+        const btns = btnRef.current.children;
+
+        pos.current.forEach((pos, idx) => {
+            if (scroll >= pos) {
+                for (const btn of btns) btn.classList.remove('on');
+                btns[idx].classList.add('on');
+            }
+        });
+    };
 
     useEffect(() => {
         getPos();

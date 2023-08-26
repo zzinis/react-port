@@ -28,9 +28,13 @@ function Btns() {
     useEffect(() => {
         getPos();
         window.addEventListener('resize', getPos);
+        window.addEventListener('scroll', activation);
+
 
         return () => {
             window.removeEventListener('resize', getPos);
+            window.removeEventListener('scroll', activation);
+
         };
     }, []);
     return (

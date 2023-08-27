@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRef, useEffect, useState } from 'react';
 
-function Btns() {
+function Btns({ setScrolled }) {
     console.log('btn Called');
 
     const btnRef = useRef(null);
@@ -18,6 +18,8 @@ function Btns() {
         const scroll = window.scrollY;
         const btns = btnRef.current.children;
         const boxs = btnRef.current.parentElement.querySelectorAll('.myScroll');
+        setScrolled(scroll);
+
 
 
         pos.current.forEach((pos, idx) => {

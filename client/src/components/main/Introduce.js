@@ -2,7 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptop, faTrophy, faMedal } from '@fortawesome/free-solid-svg-icons';
 
-const Introduce = () => {
+function Introduce({ Scrolled }) {
+    console.log(Scrolled);
     return (
         <section id="introduce" className="myScroll">
             <div className="inner">

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRef, useEffect, useState } from 'react';
 
-function Btns({ setScrolled }) {
+function Btns({ setScrolled, setPos }) {
     console.log('btn Called');
 
     const btnRef = useRef(null);
@@ -11,6 +11,8 @@ function Btns({ setScrolled }) {
         const secs = btnRef.current.parentElement.querySelectorAll('.myScroll');
         for (const sec of secs) pos.current.push(sec.offsetTop);
         setNum(pos.current.length);
+        setPos(pos.current);
+
 
     };
     const activation = () => {

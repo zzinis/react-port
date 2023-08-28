@@ -13,6 +13,8 @@ import Btns from './Btns';
 
 function Main() {
 	const [Scrolled, setScrolled] = useState(0);
+	const [Pos, setPos] = useState([]);
+
 
 	// const main = useRef(null);
 	// let pos = useRef([]);
@@ -36,12 +38,12 @@ function Main() {
 			<Visual />
 			<Popup />
 			<News />
-			<Introduce Scrolled={Scrolled} />
+			<Introduce Scrolled={Scrolled} Pos={Pos[2]} />
 			<About />
 			<Blog />
 			<Content />
 			<Comment />
-			<Btns setScrolled={setScrolled} />
+			<Btns setScrolled={setScrolled} setPos={setPos} />
 		</main>
 	);
 }

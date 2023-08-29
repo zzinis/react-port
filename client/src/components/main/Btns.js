@@ -6,7 +6,9 @@ function Btns({ setScrolled, setPos }) {
 
     const btnRef = useRef(null);
     const pos = useRef([]);
-    const [Num, setNum] = useState(0); const getPos = () => {
+    const [Num, setNum] = useState(0);
+    const getPos = () => {
+        console.log('getPos');
         pos.current = [];
         const secs = btnRef.current.parentElement.querySelectorAll('.myScroll');
         for (const sec of secs) pos.current.push(sec.offsetTop);
@@ -16,6 +18,7 @@ function Btns({ setScrolled, setPos }) {
 
     };
     const activation = () => {
+        console.log('activation');
         const base = -window.innerHeight / 2;
         const scroll = window.scrollY;
         const btns = btnRef.current.children;

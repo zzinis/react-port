@@ -1,8 +1,10 @@
 import React from 'react'
 import Layout from '../common/Layout'
+import { useRef, useEffect, useState } from 'react';
 
 function Location() {
     const container = useRef(null);
+    const [Traffic, setTraffic] = useState(false);
     const { kakao } = window;
     const option = {
         center: new kakao.maps.LatLng(33.450701, 126.570667),

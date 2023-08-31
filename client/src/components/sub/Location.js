@@ -10,7 +10,13 @@ function Location() {
     };
 
     useEffect(() => {
-        new kakao.maps.Map(container.current, option);
+        const mapInstance = new kakao.maps.Map(container.current, option);
+
+        const marker = new kakao.maps.Marker({
+            position: option.center,
+        });
+
+        marker.setMap(mapInstance);
     }, []);
     return (
         <Layout name={'Location'}>

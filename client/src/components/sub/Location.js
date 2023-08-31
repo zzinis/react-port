@@ -26,6 +26,7 @@ function Location() {
         <Layout name={'Location'}>
             <h1>Location</h1>
             <p>Lorem, ipsum.</p>
+            <div id='map' ref={container}></div>
         </Layout>
     )
 }

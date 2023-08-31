@@ -19,7 +19,9 @@ function Location() {
         });
 
         marker.setMap(mapInstance);
-    }, []);
+        Traffic ? mapInstance.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC) : mapInstance.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+    }, [Traffic]);
+
     return (
         <Layout name={'Location'}>
             <h1>Location</h1>

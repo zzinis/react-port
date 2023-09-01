@@ -20,10 +20,13 @@ function Location() {
         });
 
         marker.setMap(mapInstance);
+        setLocation(mapInstance);
 
-        Traffic ? mapInstance.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC) : mapInstance.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+    }, []);
+
+    useEffect(() => {
+        Traffic ? Location.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC) : Location.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
     }, [Traffic]);
-
     return (
         <Layout name={'Location'}>
             <h1>Location</h1>

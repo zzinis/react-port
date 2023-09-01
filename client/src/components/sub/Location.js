@@ -5,6 +5,7 @@ import { useRef, useEffect, useState } from 'react';
 function Location() {
     const container = useRef(null);
     const [Traffic, setTraffic] = useState(false);
+    const [Location, setLocation] = useState(null);
     const { kakao } = window;
     const option = {
         center: new kakao.maps.LatLng(33.450701, 126.570667),
@@ -19,6 +20,7 @@ function Location() {
         });
 
         marker.setMap(mapInstance);
+
         Traffic ? mapInstance.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC) : mapInstance.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
     }, [Traffic]);
 

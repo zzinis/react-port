@@ -27,6 +27,7 @@ function Location() {
             <h1>Location</h1>
             <p>Lorem, ipsum.</p>
             <div id='map' ref={container}></div>
+            <button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic ON' : 'Traffic OFF'}</button>
         </Layout>
     )
 }

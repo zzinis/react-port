@@ -35,7 +35,10 @@ function Location() {
             imgPos: { offset: new kakao.maps.Point(116, 99) },
         },
     ];
-
+    const option = { center: info[0].latlng, level: 3 };
+    const imgSrc = info[0].imgSrc;
+    const imgSize = info[0].imgSize;
+    const imgPos = info[0].imgPos;
 
     useEffect(() => {
         const mapInstance = new kakao.maps.Map(container.current, option);

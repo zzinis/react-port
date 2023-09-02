@@ -37,11 +37,10 @@ function Location() {
             imgPos: { offset: new kakao.maps.Point(116, 99) },
         },
     ];
-    const option = { center: info[0].latlng, level: 3 };
-    const imgSrc = info[0].imgSrc;
-    const imgSize = info[0].imgSize;
-    const imgPos = info[0].imgPos;
-
+    const option = { center: info[Index].latlng, level: 3 };
+    const imgSrc = info[Index].imgSrc;
+    const imgSize = info[Index].imgSize;
+    const imgPos = info[Index].imgPos;
     useEffect(() => {
         const mapInstance = new kakao.maps.Map(container.current, option);
 
@@ -52,10 +51,12 @@ function Location() {
         marker.setMap(mapInstance);
         setLocation(mapInstance);
 
-    }, []);
+    }, [Index]);
 
     useEffect(() => {
-        Traffic ? Location.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC) : Location.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+        Traffic
+            ? Location?.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
+            : Location?.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
     }, [Traffic]);
     return (
         <Layout name={'Location'}>

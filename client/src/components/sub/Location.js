@@ -64,6 +64,15 @@ function Location() {
             <p>Lorem, ipsum.</p>
             <div id='map' ref={container}></div>
             <button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic ON' : 'Traffic OFF'}</button>
+            <ul className='branch'>
+                {info.map((el, idx) => {
+                    return (
+                        <li key={idx} onClick={() => setIndex(idx)}>
+                            {el.title}
+                        </li>
+                    );
+                })}
+            </ul>
         </Layout>
     )
 }

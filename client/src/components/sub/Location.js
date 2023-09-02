@@ -6,6 +6,8 @@ function Location() {
     const container = useRef(null);
     const [Traffic, setTraffic] = useState(false);
     const [Location, setLocation] = useState(null);
+    const [Index, setIndex] = useState(0);
+    console.log(Index);
     // const { kakao } = window;
     // const option = {
     //     center: new kakao.maps.LatLng(33.450701, 126.570667),

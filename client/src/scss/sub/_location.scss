@@ -5,5 +5,14 @@
 			height: 300px;
 			background: #eee;
 		}
+		.branch {
+			li {
+				cursor: pointer;
+
+				&.on {
+					color: blue;
+				}
+			}
+		}
 	}
 }

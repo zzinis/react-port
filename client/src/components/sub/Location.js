@@ -43,6 +43,8 @@ function Location() {
     const imgPos = info[Index].imgPos;
     useEffect(() => {
         const mapInstance = new kakao.maps.Map(container.current, option);
+        mapInstance.addControl(new kakao.maps.MapTypeControl(), kakao.maps.ControlPosition.TOPRIGHT);
+        mapInstance.addControl(new kakao.maps.ZoomControl(), kakao.maps.ControlPosition.RIGHT);
 
         const marker = new kakao.maps.Marker({
             position: option.center,

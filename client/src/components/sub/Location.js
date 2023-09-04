@@ -42,6 +42,7 @@ function Location() {
     const imgSize = info[Index].imgSize;
     const imgPos = info[Index].imgPos;
     useEffect(() => {
+        container.current.innerHTML = '';
         const mapInstance = new kakao.maps.Map(container.current, option);
         mapInstance.addControl(new kakao.maps.MapTypeControl(), kakao.maps.ControlPosition.TOPRIGHT);
         mapInstance.addControl(new kakao.maps.ZoomControl(), kakao.maps.ControlPosition.RIGHT);

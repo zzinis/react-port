@@ -67,7 +67,7 @@ function Location() {
             <ul className='branch'>
                 {info.map((el, idx) => {
                     return (
-                        <li key={idx} onClick={() => setIndex(idx)}>
+                        <li key={idx} onClick={() => setIndex(idx)} className={idx === Index ? 'on' : ''}>
                             {el.title}
                         </li>
                     );

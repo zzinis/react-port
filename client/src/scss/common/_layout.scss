@@ -36,6 +36,9 @@
 	> .inner {
 		padding: 100px 10vw;
 		min-height: 600px;
+		transition-property: opacity, transform;
+		transition-duration: 1s;
+		transition-delay: 0.5s;
 
 		h1 {
 			width: 100%;

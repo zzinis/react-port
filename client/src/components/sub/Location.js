@@ -53,6 +53,14 @@ function Location() {
 
         marker.setMap(mapInstance);
         setLocation(mapInstance);
+        const setCenter = () => {
+            console.log('setCenter');
+
+            mapInstance.setCenter(info[Index].latlng);
+        };
+
+        window.addEventListener('resize', setCenter);
+        return () => window.removeEventListener('resize', setCenter);
 
     }, [Index]);
 

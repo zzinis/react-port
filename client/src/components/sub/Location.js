@@ -1,9 +1,12 @@
 import React from 'react'
 import Layout from '../common/Layout'
 import { useRef, useEffect, useState } from 'react';
+import emailjs from '@emailjs/browser';
+
 
 function Location() {
     const container = useRef(null);
+    const form = useRef(null);
     const [Traffic, setTraffic] = useState(false);
     const [Location, setLocation] = useState(null);
     const [Index, setIndex] = useState(0);

@@ -44,6 +44,19 @@ function Location() {
     const imgSrc = info[Index].imgSrc;
     const imgSize = info[Index].imgSize;
     const imgPos = info[Index].imgPos;
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_4wnjvjd', 'template_651z7ig', form.current, '23g8RepczesqKPoIX').then(
+            (result) => {
+                console.log(result.text);
+            },
+            (error) => {
+                console.log(error.text);
+            }
+        );
+    };
     useEffect(() => {
         container.current.innerHTML = '';
         const mapInstance = new kakao.maps.Map(container.current, option);

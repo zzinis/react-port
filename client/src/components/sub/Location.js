@@ -6,10 +6,15 @@ import emailjs from '@emailjs/browser';
 
 function Location() {
     const container = useRef(null);
+    const inputName = useRef(null);
+    const inputEmail = useRef(null);
+    const inputMsg = useRef(null);
     const form = useRef(null);
     const [Traffic, setTraffic] = useState(false);
     const [Location, setLocation] = useState(null);
     const [Index, setIndex] = useState(0);
+    const [Success, setSuccess] = useState(false);
+
     console.log(Index);
     // const { kakao } = window;
     // const option = {

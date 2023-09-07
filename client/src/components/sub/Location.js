@@ -56,11 +56,17 @@ function Location() {
         emailjs.sendForm('service_4wnjvjd', 'template_651z7ig', form.current, '23g8RepczesqKPoIX').then(
             (result) => {
                 console.log(result.text);
+                setSuccess(true);
+                inputName.current.value = '';
+                inputEmail.current.value = '';
+                inputMsg.current.value = '';
             },
             (error) => {
                 console.log(error.text);
+
             }
         );
+
     };
     useEffect(() => {
         container.current.innerHTML = '';

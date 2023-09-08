@@ -82,6 +82,7 @@ function Location() {
 
         marker.setMap(mapInstance);
         setLocation(mapInstance);
+        mapInstance.setZoomable(false);
         const setCenter = () => {
             console.log('setCenter');
 

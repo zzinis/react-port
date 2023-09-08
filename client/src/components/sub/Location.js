@@ -117,11 +117,11 @@ function Location() {
             <div id='formBox'>
                 <form ref={form} onSubmit={sendEmail}>
                     <label>Name</label>
-                    <input type='text' name='name' />
+                    <input type='text' name='name' ref={inputName} />
                     <label>Email</label>
-                    <input type='email' name='email' />
+                    <input type='email' name='email' ref={inputEmail} />
                     <label>Message</label>
-                    <textarea name='message' />
+                    <textarea name='message' ref={inputMsg} />
                     <input type='submit' value='Send' />
                 </form>
             </div>

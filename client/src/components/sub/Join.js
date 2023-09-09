@@ -5,7 +5,7 @@ function Join() {
     return <Layout name={'Join'}>
         <form>
             <fieldset>
-                <legend>회원가입 폼 양식</legend>
+                <legend className='h'>회원가입 폼 양식</legend>
                 <table border='1'>
                     <tr>
                         <th scope='row'>

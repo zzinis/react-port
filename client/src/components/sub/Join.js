@@ -1,7 +1,26 @@
 import React from 'react'
 import Layout from '../common/Layout'
+import { useState, useEffect } from 'react';
 
 function Join() {
+    const initVal = {
+        userid: '',
+        pwd1: '',
+        pwd2: '',
+        email: '',
+    };
+
+    const [Val, setVal] = useState(initVal);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setVal({ ...Val, [name]: value });
+    };
+
+    useEffect(() => {
+        console.log(Val);
+    }, [Val]);
+
     return <Layout name={'Join'}>
         <form>
             <fieldset>

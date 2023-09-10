@@ -31,7 +31,13 @@ function Join() {
                             <label htmlFor='userid'>USER ID</label>
                         </th>
                         <td>
-                            <input type='text' name='userid' id='userid' placeholder='아이디를 입력하세요' />
+                            <input
+                                type='text'
+                                name='userid'
+                                id='userid'
+                                placeholder='아이디를 입력하세요'
+                                onChange={handleChange}
+                            />
                         </td>
                     </tr>
 
@@ -39,9 +45,13 @@ function Join() {
                         <th>
                             <label htmlFor='pwd1'>PASSWORD</label>
                         </th>
-                        <td>
-                            <input type='password' name='pwd1' id='pwd1' placeholder='비밀번호를 입력하세요' />
-                        </td>
+                        <input
+                            type='password'
+                            name='pwd1'
+                            id='pwd1'
+                            placeholder='비밀번호를 입력하세요'
+                            onChange={handleChange}
+                        />
                     </tr>
 
                     <tr>

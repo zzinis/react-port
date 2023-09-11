@@ -16,13 +16,22 @@ function Join() {
         const { name, value } = e.target;
         setVal({ ...Val, [name]: value });
     };
+    const check = (value) => {
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('현재 스테이트값', Val);
+        console.log(check(Val));
+    };
+
 
     useEffect(() => {
         console.log(Val);
     }, [Val]);
 
     return <Layout name={'Join'}>
-        <form>
+        <form onSubmit={handleSubmit}>
             <fieldset>
                 <legend className='h'>회원가입 폼 양식</legend>
                 <table border='1'>

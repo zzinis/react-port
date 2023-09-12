@@ -11,6 +11,8 @@ function Join() {
     };
 
     const [Val, setVal] = useState(initVal);
+    const [Err, setErr] = useState({});
+    const [Submit, setSubmit] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -41,6 +43,8 @@ function Join() {
         e.preventDefault();
         console.log('현재 스테이트값', Val);
         console.log(check(Val));
+        setErr(check(Val));
+        setSubmit(true);
     };
 
 

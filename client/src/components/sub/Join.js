@@ -82,6 +82,8 @@ function Join() {
                                 placeholder='아이디를 입력하세요'
                                 onChange={handleChange}
                             />
+                            <br />
+                            <p>{Err.userid}</p>
                         </td>
                     </tr>
 
@@ -97,6 +99,8 @@ function Join() {
                                 placeholder='비밀번호를 입력하세요'
                                 onChange={handleChange}
                             />
+                            <br />
+                            <p>{Err.pwd1}</p>
                         </td>
 
                     </tr>

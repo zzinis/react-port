@@ -117,6 +117,8 @@ function Join() {
                                 placeholder='비밀번호를 재입력하세요'
                                 onChange={handleChange}
                             />
+                            <br />
+                            <p>{Err.pwd2}</p>
                         </td>
                     </tr>
 
@@ -132,6 +134,21 @@ function Join() {
                                 placeholder='이메일주소를 입력하세요'
                                 onChange={handleChange}
                             />
+                            <br />
+                            <p>{Err.email}</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>GENDER</th>
+                        <td>
+                            <label htmlFor='male'>Male</label>
+                            <input type='radio' name='gender' value='male' id='mail' onChange={handleRadio} />
+
+                            <label htmlFor='female'>FeMale</label>
+                            <input type='radio' name='gender' value='female' id='female' onChange={handleRadio} />
+                            <br />
+                            <p>{Err.gender}</p>
                         </td>
                     </tr>
 

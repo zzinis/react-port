@@ -8,6 +8,8 @@ function Join() {
         pwd1: '',
         pwd2: '',
         email: '',
+        gender: false,
+
     };
 
     const [Val, setVal] = useState(initVal);

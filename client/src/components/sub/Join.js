@@ -20,6 +20,10 @@ function Join() {
         const { name, value } = e.target;
         setVal({ ...Val, [name]: value });
     };
+    const handleRadio = (e) => {
+        const { name, checked } = e.target;
+        setVal({ ...Val, [name]: checked });
+    };
     const check = (value) => {
         const errs = {};
         const eng = /[a-zA-Z]/;
@@ -37,6 +41,9 @@ function Join() {
         }
         if (value.email.length < 8 || !/@/.test(value.email)) {
             errs.email = '이메일주소는 8글자 이상 @를 포함하세요.';
+        }
+        if (!value.gender) {
+            errs.gender = '성별을 체크해주세요.';
         }
         return errs;
     };

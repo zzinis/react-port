@@ -163,6 +163,21 @@ function Join() {
                             <p>{Err.gender}</p>
                         </td>
                     </tr>
+                    <tr>
+                        <th>INTERESTS</th>
+                        <td>
+                            <label htmlFor='music'>Music</label>
+                            <input type='checkbox' name='interests' value='music' id='music' onChange={handleCheck} />
+
+                            <label htmlFor='reading'>Reading</label>
+                            <input type='checkbox' name='interests' value='reading' id='reading' onChange={handleCheck} />
+
+                            <label htmlFor='game'>Game</label>
+                            <input type='checkbox' name='interests' value='game' id='game' onChange={handleCheck} />
+                            <br />
+                            {Err.interests && <p>{Err.interests}</p>}
+                        </td>
+                    </tr>
 
                     <tr>
                         <th colspan='2'>
@@ -170,6 +185,7 @@ function Join() {
                             <input type='submit' value='SEND' />
                         </th>
                     </tr>
+
                 </table>
             </fieldset>
         </form>

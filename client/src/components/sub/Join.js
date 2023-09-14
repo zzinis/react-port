@@ -9,6 +9,7 @@ function Join() {
         pwd2: '',
         email: '',
         gender: false,
+        interests: false,
 
     };
 
@@ -23,6 +24,14 @@ function Join() {
     const handleRadio = (e) => {
         const { name, checked } = e.target;
         setVal({ ...Val, [name]: checked });
+    };
+    const handleCheck = (e) => {
+        const { name } = e.target;
+        let isChecked = false;
+        const inputs = e.target.parentElement.querySelectorAll('input');
+
+        inputs.forEach((el) => el.checked && (isChecked = true));
+        setVal({ ...Val, [name]: isChecked });
     };
     const check = (value) => {
         const errs = {};

@@ -54,6 +54,9 @@ function Join() {
         if (!value.gender) {
             errs.gender = '성별을 체크해주세요.';
         }
+        if (!value.interests) {
+            errs.interests = '관심사를 하나 이상 체크하세요.';
+        }
         return errs;
     };
 

@@ -92,6 +92,8 @@ function Join() {
                                 id='userid'
                                 placeholder='아이디를 입력하세요'
                                 onChange={handleChange}
+                                value={Val.userid}
+
                             />
                             <br />
                             <p>{Err.userid}</p>
@@ -109,6 +111,8 @@ function Join() {
                                 id='pwd1'
                                 placeholder='비밀번호를 입력하세요'
                                 onChange={handleChange}
+                                value={Val.pwd1}
+
                             />
                             <br />
                             <p>{Err.pwd1}</p>
@@ -127,6 +131,8 @@ function Join() {
                                 id='pwd2'
                                 placeholder='비밀번호를 재입력하세요'
                                 onChange={handleChange}
+                                value={Val.pwd2}
+
                             />
                             <br />
                             <p>{Err.pwd2}</p>
@@ -144,6 +150,8 @@ function Join() {
                                 id='email'
                                 placeholder='이메일주소를 입력하세요'
                                 onChange={handleChange}
+                                value={Val.email}
+
                             />
                             <br />
                             <p>{Err.email}</p>

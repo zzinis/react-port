@@ -10,6 +10,8 @@ function Join() {
         email: '',
         gender: false,
         interests: false,
+        edu: '',
+
     };
 
     const [Val, setVal] = useState(initVal);
@@ -32,6 +34,7 @@ function Join() {
         inputs.forEach((el) => el.checked && (isChecked = true));
         setVal({ ...Val, [name]: isChecked });
     };
+
     const check = (value) => {
         const errs = {};
         const eng = /[a-zA-Z]/;
@@ -56,9 +59,16 @@ function Join() {
         if (!value.interests) {
             errs.interests = '관심사를 하나 이상 체크하세요.';
         }
+        if (value.edu === '') {
+            errs.edu = '최종학력을 선택하세요.';
+        }
         return errs;
     };
 
+    const handleSelect = (e) => {
+        const { name, value } = e.target;
+        setVal({ ...Val, [name]: value });
+    };
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('현재 스테이트값', Val);

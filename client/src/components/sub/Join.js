@@ -10,7 +10,6 @@ function Join() {
         email: '',
         gender: false,
         interests: false,
-
     };
 
     const [Val, setVal] = useState(initVal);
@@ -181,7 +180,7 @@ function Join() {
 
                     <tr>
                         <th colspan='2'>
-                            <input type='reset' value='CANCEL' />
+                            <input type='reset' value='CANCEL' onClick={() => setVal(initVal)} />
                             <input type='submit' value='SEND' />
                         </th>
                     </tr>

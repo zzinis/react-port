@@ -215,6 +215,24 @@ function Join() {
                         </td>
                     </tr>
 
+                    <tr>
+                        <th>
+                            <label htmlFor='comments'>Leave Message</label>
+                        </th>
+                        <td>
+                            <textarea
+                                name='comments'
+                                id='commnets'
+                                cols='30'
+                                rows='3'
+                                value={Val.comments}
+                                onChange={handleChange}
+                            ></textarea>
+                            <br />
+                            {Err.comments && <p>{Err.comments}</p>}
+                        </td>
+                    </tr>
+
 
                     <tr>
                         <th colspan='2'>

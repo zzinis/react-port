@@ -11,6 +11,7 @@ function Join() {
         gender: false,
         interests: false,
         edu: '',
+        comments: '',
 
     };
 
@@ -61,6 +62,9 @@ function Join() {
         }
         if (value.edu === '') {
             errs.edu = '최종학력을 선택하세요.';
+        }
+        if (value.comments.length < 10) {
+            errs.comments = '남기는 말을 최소 10글자 이상 입력하세요.';
         }
         return errs;
     };

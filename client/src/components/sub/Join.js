@@ -1,8 +1,12 @@
 import React from 'react'
 import Layout from '../common/Layout'
 import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+
 
 function Join() {
+    const history = useHistory();
+
     const initVal = {
         userid: '',
         pwd1: '',

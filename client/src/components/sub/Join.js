@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../common/Layout'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
 
@@ -97,6 +97,8 @@ function Join() {
     }, [Err]);
 
     return <Layout name={'Join'}>
+        <button onClick={() => history.goBack()}>뒤로 가기</button>
+
         <form onSubmit={handleSubmit}>
             <fieldset>
                 <legend className='h'>회원가입 폼 양식</legend>
@@ -228,7 +230,7 @@ function Join() {
                         <td>
                             <textarea
                                 name='comments'
-                                id='commnets'
+                                id='comments'
                                 cols='30'
                                 rows='3'
                                 value={Val.comments}

@@ -6,6 +6,9 @@ import { useHistory } from 'react-router-dom';
 
 function Join() {
     const history = useHistory();
+    const selectEl = useRef(null);
+    const radioGroup = useRef(null);
+    const checkGroup = useRef(null);
 
     const initVal = {
         userid: '',

@@ -17,7 +17,7 @@ function Join() {
         email: '',
         gender: false,
         interests: false,
-        edu: '',
+        edu: null,
         comments: '',
 
     };
@@ -74,6 +74,15 @@ function Join() {
             errs.comments = '남기는 말을 최소 10글자 이상 입력하세요.';
         }
         return errs;
+    };
+    const resetForm = () => {
+        const select = selectEl.current.options[0];
+        const checks = checkGroup.current.querySelectorAll('input');
+        const radios = radioGroup.current.querySelectorAll('input');
+        select.selected = true;
+        checks.forEach((el) => (el.checked = false));
+        radios.forEach((el) => (el.checked = false));
+        setVal(initVal);
     };
 
     const handleSelect = (e) => {

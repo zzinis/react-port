@@ -195,7 +195,7 @@ function Join() {
 
                     <tr>
                         <th>GENDER</th>
-                        <td>
+                        <td ref={radioGroup}>
                             <label htmlFor='male'>Male</label>
                             <input type='radio' name='gender' value='male' id='mail' onChange={handleRadio} />
 

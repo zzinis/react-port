@@ -225,12 +225,12 @@ function Join() {
                             <label htmlFor='edu'>EDUCATION</label>
                         </th>
                         <td>
-                            <select name='edu' id='edu' onChange={handleSelect}>
-                                <option value=''>최종학력을 선택하세요</option>
-                                <option value='elementary-school'>초등학교 졸업</option>
-                                <option value='middle-school'>중학교 졸업</option>
-                                <option value='high-school'>고등학교 졸업</option>
-                                <option value='college'>대학교 졸업</option>
+                            <select name='edu' id='edu' onChange={handleSelect} ref={selectEl}>
+                                <option defaultValue=''>최종학력을 선택하세요</option>
+                                <option defaultValue='elementary-school'>초등학교 졸업</option>
+                                <option defaultValue='middle-school'>중학교 졸업</option>
+                                <option defaultValue='high-school'>고등학교 졸업</option>
+                                <option defaultValue='college'>대학교 졸업</option>
                             </select>
                             {Err.edu && <p>{Err.edu}</p>}
                         </td>

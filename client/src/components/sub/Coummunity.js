@@ -19,6 +19,11 @@ function Coummunity() {
         setPosts([...Posts, { title: input.current.value, content: textarea.current.value }]);
         resetForm();
     };
+
+    useEffect(() => {
+        console.log(Posts);
+    }, [Posts]);
+
     return <Layout name={'Community'}>
         <h1>Community</h1>
         <p>Lorem, ipsum.</p>

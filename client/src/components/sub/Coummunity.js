@@ -14,6 +14,11 @@ function Coummunity() {
         input.current.value = '';
         textarea.current.value = '';
     };
+
+    const createPost = () => {
+        setPosts([...Posts, { title: input.current.value, content: textarea.current.value }]);
+        resetForm();
+    };
     return <Layout name={'Community'}>
         <h1>Community</h1>
         <p>Lorem, ipsum.</p>

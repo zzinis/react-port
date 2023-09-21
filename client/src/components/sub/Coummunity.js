@@ -11,6 +11,16 @@ function Coummunity() {
     return <Layout name={'Community'}>
         <h1>Community</h1>
         <p>Lorem, ipsum.</p>
+
+        <div className='inputBox'>
+            <input type='text' placeholder='제목을 입력하세요.' ref={input} />
+            <br />
+            <textarea cols='30' rows='3' placeholder='본문을 입력하세요.' ref={textarea}></textarea>
+            <br />
+
+            <button>cancel</button>
+            <button onClick={createPost}>write</button>
+        </div>
     </Layout>
 }
 

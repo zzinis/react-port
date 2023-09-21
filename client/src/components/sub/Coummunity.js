@@ -8,6 +8,12 @@ function Coummunity() {
     const input = useRef(null);
     const textarea = useRef(null);
     const [Posts, setPosts] = useState([]);
+
+
+    const resetForm = () => {
+        input.current.value = '';
+        textarea.current.value = '';
+    };
     return <Layout name={'Community'}>
         <h1>Community</h1>
         <p>Lorem, ipsum.</p>

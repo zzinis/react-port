@@ -22,7 +22,7 @@ function Coummunity() {
 
 
         }
-        setPosts([...Posts, { title: input.current.value, content: textarea.current.value }]);
+        setPosts([{ title: input.current.value, content: textarea.current.value }, ...Posts]);
     };
 
     useEffect(() => {

@@ -16,8 +16,11 @@ function Coummunity() {
     };
 
     const createPost = () => {
+        if (!input.current.value.trim() || (!textarea.current.value.trim())) {
+            resetForm();
+
+        }
         setPosts([...Posts, { title: input.current.value, content: textarea.current.value }]);
-        resetForm();
     };
 
     useEffect(() => {

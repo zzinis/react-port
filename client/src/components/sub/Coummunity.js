@@ -18,6 +18,8 @@ function Coummunity() {
     const createPost = () => {
         if (!input.current.value.trim() || (!textarea.current.value.trim())) {
             resetForm();
+            return alert('제목과 본문을 모두 입력하세요.');
+
 
         }
         setPosts([...Posts, { title: input.current.value, content: textarea.current.value }]);

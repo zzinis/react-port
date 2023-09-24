@@ -24,6 +24,9 @@ function Coummunity() {
         }
         setPosts([{ title: input.current.value, content: textarea.current.value }, ...Posts]);
     };
+    const deletePost = (delIndex) => {
+        setPosts(Posts.filter((_, idx) => idx !== delIndex));
+    };
 
     useEffect(() => {
         console.log(Posts);

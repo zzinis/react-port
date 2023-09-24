@@ -54,7 +54,8 @@ function Coummunity() {
 
                         <nav className='btnSet'>
                             <button>EDIT</button>
-                            <button>DELETE</button>
+                            <button onClick={() => deletePost(idx)}>DELETE</button>
+
                         </nav>
                     </article>
                 );

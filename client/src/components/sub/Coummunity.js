@@ -52,8 +52,10 @@ function Coummunity() {
             {Posts.map((post, idx) => {
                 return (
                     <article key={idx}>
-                        <h2>{post.title}</h2>
-                        <p>{post.content}</p>
+                        <div className='txt'>
+                            <h2>{post.title}</h2>
+                            <p>{post.content}</p>
+                        </div>
 
                         <nav className='btnSet'>
                             <button>EDIT</button>

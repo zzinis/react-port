@@ -29,6 +29,14 @@ function Coummunity() {
 
         setPosts(Posts.filter((_, idx) => idx !== delIndex));
     };
+    const enableUpdate = (editIndex) => {
+        setPosts(
+            Posts.map((post, postIndex) => {
+                if (editIndex === postIndex) post.enableUpdate = true;
+                return post;
+            })
+        );
+    };
 
     useEffect(() => {
         console.log(Posts);

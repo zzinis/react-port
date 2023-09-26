@@ -66,7 +66,8 @@ function Coummunity() {
                         </div>
 
                         <nav className='btnSet'>
-                            <button>EDIT</button>
+                            <button onClick={() => enableUpdate(idx)}>EDIT</button>
+
                             <button onClick={() => deletePost(idx)}>DELETE</button>
 
                         </nav>

@@ -78,7 +78,8 @@ function Coummunity() {
                                 </div>
 
                                 <nav className='btnSet'>
-                                    <button>CANCEL</button>
+                                    <button onClick={() => disableUpdate(idx)}>CANCEL</button>
+
                                     <button>UPDATE</button>
                                 </nav>                            </>
                         ) : (

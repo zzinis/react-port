@@ -37,6 +37,14 @@ function Coummunity() {
             })
         );
     };
+    const disableUpdate = (editIndex) => {
+        setPosts(
+            Posts.map((post, postIndex) => {
+                if (editIndex === postIndex) post.enableUpdate = false;
+                return post;
+            })
+        );
+    };
 
     useEffect(() => {
         console.log(Posts);

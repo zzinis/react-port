@@ -62,8 +62,17 @@ function Coummunity() {
                     <article key={idx}>
                         {post.enableUpdate ? (
                             <>
-                                <p>수정모드</p>
-                            </>
+                                <div className='txt'>
+
+                                    <input type='text' defaultValue={post.title} />
+                                    <br />
+                                    <textarea cols='30' rows='3' defaultValue={post.content}></textarea>
+                                </div>
+
+                                <nav className='btnSet'>
+                                    <button>CANCEL</button>
+                                    <button>UPDATE</button>
+                                </nav>                            </>
                         ) : (
                             <>
                                 <div className='txt'>

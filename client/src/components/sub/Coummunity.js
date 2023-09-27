@@ -60,21 +60,27 @@ function Coummunity() {
             {Posts.map((post, idx) => {
                 return (
                     <article key={idx}>
-                        <div className='txt'>
-                            <h2>{post.title}</h2>
-                            <p>{post.content}</p>
-                        </div>
+                        {post.enableUpdate ? (
+                            <>
+                                <p>수정모드</p>
+                            </>
+                        ) : (
+                            <>
+                                <div className='txt'>
+                                    <h2>{post.title}</h2>
+                                    <p>{post.content}</p>
+                                </div>
 
-                        <nav className='btnSet'>
-                            <button onClick={() => enableUpdate(idx)}>EDIT</button>
+                                <nav className='btnSet'>
+                                    <button onClick={() => enableUpdate(idx)}>EDIT</button>
 
-                            <button onClick={() => deletePost(idx)}>DELETE</button>
+                                    <button onClick={() => deletePost(idx)}>DELETE</button>
 
-                        </nav>
-                    </article>
-                );
+                                </nav>
+                            </article>
+                        );
             })}
-        </div>
+                    </div>
     </Layout>
 }
 

@@ -73,14 +73,14 @@ function Coummunity() {
 
                                 <nav className='btnSet'>
                                     <button onClick={() => enableUpdate(idx)}>EDIT</button>
-
                                     <button onClick={() => deletePost(idx)}>DELETE</button>
-
                                 </nav>
-                            </article>
-                        );
+                            </>
+                        )}
+                    </article>
+                );
             })}
-                    </div>
+        </div>
     </Layout>
 }
 

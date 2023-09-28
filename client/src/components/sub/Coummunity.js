@@ -53,6 +53,22 @@ function Coummunity() {
             })
         );
     };
+    const updatePost = (editIndex) => {
+        if (!editInput.current.value.trim() || !editTextarea.current.value.trim()) {
+            return alert('수정할 제목과 본문을 모두 입력하세요.');
+        }
+
+        setPosts(
+            Posts.map((post, postIndex) => {
+                if (postIndex === editIndex) {
+                    post.title = editInput.current.value;
+                    post.content = editTextarea.current.value;
+                    post.enableUpdate = false;
+                }
+                return post;
+            })
+        );
+    };
 
     useEffect(() => {
         console.log(Posts);

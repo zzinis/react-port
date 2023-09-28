@@ -7,6 +7,8 @@ function Coummunity() {
 
     const input = useRef(null);
     const textarea = useRef(null);
+    const editInput = useRef(null);
+    const editTextarea = useRef(null);
     const [Posts, setPosts] = useState([]);
     const [Allowed, setAllowed] = useState(true);
 
@@ -40,6 +42,8 @@ function Coummunity() {
                 return post;
             })
         );
+        setAllowed(true);
+
     };
     const disableUpdate = (editIndex) => {
         setPosts(

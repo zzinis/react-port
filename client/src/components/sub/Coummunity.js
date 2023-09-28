@@ -8,6 +8,8 @@ function Coummunity() {
     const input = useRef(null);
     const textarea = useRef(null);
     const [Posts, setPosts] = useState([]);
+    const [Allowed, setAllowed] = useState(true);
+
 
 
     const resetForm = () => {
@@ -30,6 +32,8 @@ function Coummunity() {
         setPosts(Posts.filter((_, idx) => idx !== delIndex));
     };
     const enableUpdate = (editIndex) => {
+        if (!Allowed) return;
+        setAllowed(false);
         setPosts(
             Posts.map((post, postIndex) => {
                 if (editIndex === postIndex) post.enableUpdate = true;

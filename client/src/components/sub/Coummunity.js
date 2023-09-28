@@ -96,9 +96,10 @@ function Coummunity() {
                             <>
                                 <div className='txt'>
 
-                                    <input type='text' defaultValue={post.title} />
+                                    <input type='text' defaultValue={post.title} ref={editInput} />
+
                                     <br />
-                                    <textarea cols='30' rows='3' defaultValue={post.content}></textarea>
+                                    <textarea cols='30' rows='3' defaultValue={post.content} ref={editTextarea}></textarea>
                                 </div>
 
                                 <nav className='btnSet'>

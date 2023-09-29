@@ -66,10 +66,10 @@ function Join() {
         if (value.email.length < 8 || !/@/.test(value.email)) {
             errs.email = '이메일주소는 8글자 이상 @를 포함하세요.';
         }
-        if (!value.gender) {
+        if (value.gender === '') {
             errs.gender = '성별을 체크해주세요.';
         }
-        if (!value.interests) {
+        if (value.interests.length === 0) {
             errs.interests = '관심사를 하나 이상 체크하세요.';
         }
         if (value.edu === '') {
@@ -113,6 +113,9 @@ function Join() {
 
         }
     }, [Err]);
+    useEffect(() => {
+        console.log(Val);
+    }, [Val]);
 
     return <Layout name={'Join'}>
         <button onClick={() => history.goBack()}>뒤로 가기</button>
@@ -253,6 +256,8 @@ function Join() {
                                 rows='3'
                                 value={Val.comments}
                                 onChange={handleChange}
+                                placeholder='남기는 말을 입력하세요.'
+
                             ></textarea>
                             <br />
                             {Err.comments && <p>{Err.comments}</p>}

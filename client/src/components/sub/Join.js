@@ -15,9 +15,9 @@ function Join() {
         pwd1: '',
         pwd2: '',
         email: '',
-        gender: false,
-        interests: false,
-        edu: null,
+        gender: '',
+        interests: [],
+        edu: '',
         comments: '',
 
     };
@@ -31,9 +31,9 @@ function Join() {
         setVal({ ...Val, [name]: value });
     };
     const handleRadio = (e) => {
-        const { name, checked } = e.target;
-        setVal({ ...Val, [name]: checked });
-        console.log(e.target.value);
+        const { name, value } = e.target;
+
+        setVal({ ...Val, [name]: value });
 
     };
     const handleCheck = (e) => {

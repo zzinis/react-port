@@ -38,11 +38,14 @@ function Join() {
     };
     const handleCheck = (e) => {
         const { name } = e.target;
-        let isChecked = false;
         const inputs = e.target.parentElement.querySelectorAll('input');
+        let checkArr = [];
+        inputs.forEach((el) => {
+            if (el.checked) checkArr.push(el.value);
+        });
+        setVal({ ...Val, [name]: checkArr });
 
-        inputs.forEach((el) => el.checked && (isChecked = true));
-        setVal({ ...Val, [name]: isChecked });
+
     };
 
     const check = (value) => {

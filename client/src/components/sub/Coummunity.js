@@ -50,6 +50,10 @@ function Coummunity() {
         setAllowed(true);
 
     };
+    useEffect(() => {
+
+        localStorage.setItem('post', JSON.stringify(Posts));
+    }, [Posts]);
     const disableUpdate = (editIndex) => {
         setPosts(
             Posts.map((post, postIndex) => {

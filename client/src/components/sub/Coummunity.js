@@ -4,6 +4,11 @@ import { useRef, useState, useEffect } from 'react';
 
 
 function Coummunity() {
+    const getLocalData = () => {
+        const data = localStorage.getItem('post');
+        if (data) return JSON.parse(data);
+        else return [];
+    };
 
     const input = useRef(null);
     const textarea = useRef(null);
@@ -68,11 +73,11 @@ function Coummunity() {
                 return post;
             })
         );
+        setAllowed(true);
+
     };
 
-    useEffect(() => {
-        console.log(Posts);
-    }, [Posts]);
+
 
     return <Layout name={'Community'}>
         <h1>Community</h1>

@@ -14,7 +14,7 @@ function Coummunity() {
     const textarea = useRef(null);
     const editInput = useRef(null);
     const editTextarea = useRef(null);
-    const [Posts, setPosts] = useState([]);
+    const [Posts, setPosts] = useState(getLocalData());
     const [Allowed, setAllowed] = useState(true);
 
 

@@ -26,7 +26,8 @@ function Gallery() {
         setItems(result.data.photos.photo);
     };
 
-    useEffect(() => getFlickr({ type: 'interest' }), []);
+    useEffect(() => getFlickr({ type: 'user', user: 'username' }), []);
+
     return (
         <Layout name={'Gallery'}>
             <div className='frame'>

@@ -1,9 +1,13 @@
 import React from 'react'
 import Layout from '../common/Layout';
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 function Gallery() {
+    const frame = useRef(null);
+    const counter = useRef(0);
+    const [Loader, setLoader] = useState(true);
+
 
 
     const [Items, setItems] = useState([]);
@@ -13,7 +17,7 @@ function Gallery() {
         const method_interest = 'flickr.interestingness.getList';
         const method_user = 'flickr.people.getPhotos';
         const method_search = 'flickr.photos.search';
-        const num = 500;
+        const num = 50;
         let url = '';
         if (opt.type === 'interest') url = `${baseURL}&api_key=${key}&method=${method_interest}&per_page=${num}`;
         if (opt.type === 'search')

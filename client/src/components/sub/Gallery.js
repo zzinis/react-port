@@ -31,31 +31,34 @@ function Gallery() {
     return (
         <Layout name={'Gallery'}>
             <div className='frame'>
-                {Items.map((item, idx) => {
-                    return (
-                        <article key={idx}>
-                            <div className='inner'>
-                                <div className='pic'>
-                                    <img
-                                        src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
-                                        alt={item.title}
-                                    />
+                <Masonry elementType={'div'} options={{ transitionDuration: '0.5s' }}>
+                    {Items.map((item, idx) => {
+                        return (
+                            <article key={idx}>
+                                <div className='inner'>
+                                    <div className='pic'>
+                                        <img
+                                            src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
+                                            alt={item.title}
+                                        />
+                                    </div>
+                                    <h2>{item.title}</h2>
+                                    <div className='profile'>
+                                        <img
+                                            src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
+                                            alt={item.owner}
+                                            onError={(e) => e.target.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif')}
+                                        />
+                                        <span>{item.owner}</span>
+                                    </div>
                                 </div>
-                                <h2>{item.title}</h2>
-                                <div className='profile'>
-                                    <img
-                                        src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
-                                        alt={item.owner}
-                                        onError={(e) => e.target.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif')}
-                                    />
-                                    <span>{item.owner}</span>
-                                </div>
-                            </div>
-                        </article>
-                    );
-                })}
+                            </article>
+                        );
+                    })}
+                </Masonry>
             </div>
-        </Layout>)
+        </Layout>
+    );
 }
 
 export default Gallery

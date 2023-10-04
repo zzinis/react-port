@@ -28,13 +28,23 @@ function Gallery() {
         const result = await axios.get(url);
         console.log(result.data.photos.photo);
         setItems(result.data.photos.photo);
+        const imgs = frame.current.querySelectorAll('img');
+        imgs.forEach((img) => {
+            img.onload = () => {
+                ++counter.current;
+                if (counter.current === num * 2) {
+                    setLoader(false);
+                    frame.current.classList.add('on');
+                }
+            };
+        });
     };
 
     useEffect(() => getFlickr({ type: 'user', user: 'username' }), []);
 
     return (
         <Layout name={'Gallery'}>
-            <div className='frame'>
+            <div className='frame' ref={frame}>
                 <Masonry elementType={'div'} options={{ transitionDuration: '0.5s' }}>
                     {Items.map((item, idx) => {
                         return (
@@ -61,6 +71,7 @@ function Gallery() {
                     })}
                 </Masonry>
             </div>
+            {Loader && <img className='loader' src={`${process.env.PUBLIC_URL}/img/loading.gif`} alt='loader' />}
         </Layout>
     );
 }

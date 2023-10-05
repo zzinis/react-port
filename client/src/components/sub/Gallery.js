@@ -8,10 +8,10 @@ function Gallery() {
     const counter = useRef(0);
     const [Loader, setLoader] = useState(true);
 
-
-
     const [Items, setItems] = useState([]);
     const getFlickr = async (opt) => {
+        counter.current = 0;
+
         const baseURL = 'https://www.flickr.com/services/rest/?format=json&nojsoncallback=1';
         const key = '';
         const method_interest = 'flickr.interestingness.getList';
@@ -30,15 +30,17 @@ function Gallery() {
         setItems(result.data.photos.photo);
         const imgs = frame.current.querySelectorAll('img');
         imgs.forEach((img) => {
+
             img.onload = () => {
                 ++counter.current;
+                console.log(counter);
+
                 if (counter.current === imgs.length) {
-                    {
-                        setLoader(false);
-                        frame.current.classList.add('on');
-                    }
-                };
-            });
+                    setLoader(false);
+                    frame.current.classList.add('on');
+                }
+            };
+        });
     };
 
     useEffect(() => getFlickr({ type: 'user', user: 'username' }), []);

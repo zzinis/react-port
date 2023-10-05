@@ -32,12 +32,13 @@ function Gallery() {
         imgs.forEach((img) => {
             img.onload = () => {
                 ++counter.current;
-                if (counter.current === num * 2) {
-                    setLoader(false);
-                    frame.current.classList.add('on');
-                }
-            };
-        });
+                if (counter.current === imgs.length) {
+                    {
+                        setLoader(false);
+                        frame.current.classList.add('on');
+                    }
+                };
+            });
     };
 
     useEffect(() => getFlickr({ type: 'user', user: 'username' }), []);

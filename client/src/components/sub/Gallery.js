@@ -47,6 +47,24 @@ function Gallery() {
 
     return (
         <Layout name={'Gallery'}>
+            <button
+                onClick={() => {
+                    setLoader(true);
+                    frame.current.classList.remove('on');
+                    getFlickr({ type: 'interest' });
+                }}
+            >
+                Interest Gallery
+            </button>
+            <button
+                onClick={() => {
+                    setLoader(true);
+                    frame.current.classList.remove('on');
+                    getFlickr({ type: 'user', user: '' });
+                }}
+            >
+                My Gallery
+            </button>
             <div className='frame' ref={frame}>
                 <Masonry elementType={'div'} options={{ transitionDuration: '0.5s' }}>
                     {Items.map((item, idx) => {

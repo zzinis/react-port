@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
 
 function Gallery() {
+
     const frame = useRef(null);
     // const counter = useRef(0);
     const [Loader, setLoader] = useState(true);
@@ -85,7 +86,15 @@ function Gallery() {
                                             alt={item.owner}
                                             onError={(e) => e.target.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif')}
                                         />
-                                        <span>{item.owner}</span>
+                                        <span
+                                            onClick={(e) => {
+                                                setLoader(true);
+                                                frame.current.classList.remove('on');
+                                                getFlickr({ type: 'user', user: e.target.innerText });
+                                            }}
+                                        >
+                                            {item.owner}
+                                        </span>
                                     </div>
                                 </div>
                             </article>

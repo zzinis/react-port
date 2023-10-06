@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
 
 function Gallery() {
+    const enableEvent = useRef(true);
 
     const frame = useRef(null);
     // const counter = useRef(0);
@@ -51,6 +52,8 @@ function Gallery() {
         <Layout name={'Gallery'}>
             <button
                 onClick={() => {
+                    if (!enableEvent.current) return;
+                    enableEvent.current = false;
                     setLoader(true);
                     frame.current.classList.remove('on');
                     getFlickr({ type: 'interest' });

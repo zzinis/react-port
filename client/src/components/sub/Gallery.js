@@ -5,13 +5,13 @@ import { useState, useEffect, useRef } from 'react';
 
 function Gallery() {
     const frame = useRef(null);
-    const counter = useRef(0);
+    // const counter = useRef(0);
     const [Loader, setLoader] = useState(true);
 
     const [Items, setItems] = useState([]);
     const getFlickr = async (opt) => {
         counter.current = 0;
-
+        let counter = 0;
         const baseURL = 'https://www.flickr.com/services/rest/?format=json&nojsoncallback=1';
         const key = '';
         const method_interest = 'flickr.interestingness.getList';
@@ -32,10 +32,11 @@ function Gallery() {
         imgs.forEach((img) => {
 
             img.onload = () => {
-                ++counter.current;
+                // ++counter.current;
+                ++counter;
                 console.log(counter);
 
-                if (counter.current === imgs.length) {
+                if (counter === imgs.length) {
                     setLoader(false);
                     frame.current.classList.add('on');
                 }

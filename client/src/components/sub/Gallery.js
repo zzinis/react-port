@@ -42,6 +42,8 @@ function Gallery() {
                 if (counter === imgs.length) {
                     setLoader(false);
                     frame.current.classList.add('on');
+                    enableEvent.current = true;
+
                 }
             };
         });
@@ -52,8 +54,11 @@ function Gallery() {
     return (
         <Layout name={'Gallery'}>
             <button
-                onClick={() => {
-                    if (!enableEvent.current) return;
+                ref={btnInterest}
+                onClick={(e) => {
+                    if (e.target.classList.contains('on')) return;
+                    btnMine.current.classList.remove('on');
+                    e.target.classList.add('on');
                     enableEvent.current = false;
                     setLoader(true);
                     frame.current.classList.remove('on');

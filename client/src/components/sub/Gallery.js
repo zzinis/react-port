@@ -5,7 +5,8 @@ import { useState, useEffect, useRef } from 'react';
 
 function Gallery() {
     const enableEvent = useRef(true);
-
+    const btnMine = useRef(null);
+    const btnInterest = useRef(null);
     const frame = useRef(null);
     // const counter = useRef(0);
     const [Loader, setLoader] = useState(true);
@@ -63,6 +64,8 @@ function Gallery() {
             </button>
             <button
                 onClick={() => {
+                    if (!enableEvent.current) return;
+                    enableEvent.current = false;
                     setLoader(true);
                     frame.current.classList.remove('on');
                     getFlickr({ type: 'user', user: '' });

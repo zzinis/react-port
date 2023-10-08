@@ -5,8 +5,8 @@ import { useState, useEffect, useRef } from 'react';
 
 function Gallery() {
     const enableEvent = useRef(true);
-    const btnMine = useRef(null);
-    const btnInterest = useRef(null);
+    const btnSet = useRef(null);
+
     const frame = useRef(null);
     // const counter = useRef(0);
     const [Loader, setLoader] = useState(true);
@@ -48,7 +48,14 @@ function Gallery() {
             };
         });
     };
-
+    const resetGallery = (e) => {
+        const btns = btnSet.current.querySelectorAll('button');
+        btns.forEach((el) => el.classList.remove('on'));
+        e.target.classList.add('on');
+        enableEvent.current = false;
+        setLoader(true);
+        frame.current.classList.remove('on');
+    };
     useEffect(() => getFlickr({ type: 'user', user: 'username' }), []);
 
     return (

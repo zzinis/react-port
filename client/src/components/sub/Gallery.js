@@ -60,31 +60,40 @@ function Gallery() {
 
     return (
         <Layout name={'Gallery'}>
-            <button
-                ref={btnInterest}
-                onClick={(e) => {
-                    if (e.target.classList.contains('on')) return;
-                    btnMine.current.classList.remove('on');
-                    e.target.classList.add('on');
-                    enableEvent.current = false;
-                    setLoader(true);
-                    frame.current.classList.remove('on');
-                    getFlickr({ type: 'interest' });
-                }}
-            >
-                Interest Gallery
-            </button>
-            <button
-                onClick={() => {
-                    if (!enableEvent.current) return;
-                    enableEvent.current = false;
-                    setLoader(true);
-                    frame.current.classList.remove('on');
-                    getFlickr({ type: 'user', user: '' });
-                }}
-            >
-                My Gallery
-            </button>
+            <div className='btnSet' ref={btnSet}>
+                <button
+                    onClick={(e) => {
+                        //재이벤트, 모션중 재이벤트 방지
+                        if (!enableEvent.current) return;
+                        if (e.target.classList.contains('on')) return;
+
+                        //기존 갤러리 초기화 함수 호출
+                        resetGallery(e);
+
+                        //새로운 데이터로 갤러리 생성 함수 호출
+                        getFlickr({ type: 'interest' });
+                    }}
+                >
+                    Interest Gallery
+                </button>
+
+                <button
+                    className='on'
+                    onClick={(e) => {
+                        //재이벤트, 모션중 재이벤트 방지
+                        if (!enableEvent.current) return;
+                        if (e.target.classList.contains('on')) return;
+
+                        //기존 갤러리 초기화 함수 호출
+                        resetGallery(e);
+
+                        //새로운 데이터로 갤러리 생성 함수 호출
+                        getFlickr({ type: 'user', user: '164021883@N04' });
+                    }}
+                >
+                    My Gallery
+                </button>
+            </div>
             <div className='frame' ref={frame}>
                 <Masonry elementType={'div'} options={{ transitionDuration: '0.5s' }}>
                     {Items.map((item, idx) => {

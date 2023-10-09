@@ -23,11 +23,8 @@ function Gallery() {
         const num = 50;
         let url = '';
         if (opt.type === 'interest') url = `${baseURL}&api_key=${key}&method=${method_interest}&per_page=${num}`;
-        if (opt.type === 'search')
-            url = `${baseURL}&api_key=${key}&method=${method_search}&per_page=${num}&tags=${opt.tags}`;
-        if (opt.type === 'user')
-            url = `${baseURL}&api_key=${key}&method=${method_user}&per_page=${num}&user_id=${opt.user}`;
-
+        if (opt.type === 'search') url = `${baseURL}&api_key=${key}&method=${method_search}&per_page=${num}&tags=${opt.tags}`;
+        if (opt.type === 'user') url = `${baseURL}&api_key=${key}&method=${method_user}&per_page=${num}&user_id=${opt.user}`;
         const result = await axios.get(url);
         console.log(result.data.photos.photo);
         setItems(result.data.photos.photo);

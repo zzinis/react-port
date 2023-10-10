@@ -125,6 +125,10 @@ function Gallery() {
                     My Gallery
                 </button>
             </div>
+            <div className='searchBox'>
+                <input type='text' placeholder='검색어를 입력하세요.' ref={searchInput} onKeyPress={(e) => e.key === 'Enter' && showSearch(e)} />
+                <button onClick={showSearch}>Seach</button>
+            </div>
             <div className='frame' ref={frame}>
                 <Masonry elementType={'div'} options={{ transitionDuration: '0.5s' }}>
                     {Items.map((item, idx) => {

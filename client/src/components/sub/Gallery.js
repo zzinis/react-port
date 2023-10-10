@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from 'react';
 function Gallery() {
     const enableEvent = useRef(true);
     const btnSet = useRef(null);
+    const searchInput = useRef(null);
 
     const frame = useRef(null);
     // const counter = useRef(0);
@@ -74,7 +75,16 @@ function Gallery() {
         resetGallery(e);
 
         //새로운 데이터로 갤러리 생성 함수 호출
-        getFlickr({ type: 'user', user: '164021883@N04' });
+        getFlickr({ type: 'user', user: '' });
+    };
+    const showSearch = (e) => {
+        const tag = searchInput.current.value.trim();
+        if (tag === '') return alert('검색어를 입력하세요.');
+        if (!enableEvent.current) return;
+
+        resetGallery(e);
+        getFlickr({ type: 'search', tags: tag });
+        searchInput.current.value = '';
     };
 
     useEffect(() => getFlickr({ type: 'user', user: 'username' }), []);

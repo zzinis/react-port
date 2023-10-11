@@ -165,6 +165,8 @@ function Gallery() {
                                         />
                                         <span
                                             onClick={(e) => {
+                                                if (isUser.current) return;
+                                                isUser.current = true;
                                                 setLoader(true);
                                                 frame.current.classList.remove('on');
                                                 getFlickr({ type: 'user', user: e.target.innerText });

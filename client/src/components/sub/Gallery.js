@@ -4,6 +4,8 @@ import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
 
 function Gallery() {
+    const isUser = useRef(true);
+
     const enableEvent = useRef(true);
     const btnSet = useRef(null);
     const searchInput = useRef(null);
@@ -73,6 +75,8 @@ function Gallery() {
 
         //새로운 데이터로 갤러리 생성 함수 호출
         getFlickr({ type: 'interest' });
+        isUser.current = false;
+
     };
 
     const showMine = (e) => {
@@ -94,6 +98,8 @@ function Gallery() {
         resetGallery(e);
         getFlickr({ type: 'search', tags: tag });
         searchInput.current.value = '';
+        isUser.current = false;
+
     };
 
     useEffect(() => getFlickr({ type: 'user', user: 'username' }), []);

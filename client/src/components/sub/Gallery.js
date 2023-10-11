@@ -29,6 +29,8 @@ function Gallery() {
         if (opt.type === 'search') url = `${baseURL}&api_key=${key}&method=${method_search}&per_page=${num}&tags=${opt.tags}`;
         if (opt.type === 'user') url = `${baseURL}&api_key=${key}&method=${method_user}&per_page=${num}&user_id=${opt.user}`;
         const result = await axios.get(url);
+        console.log(result.data.photos.photo);
+
         if (result.data.photos.photo.length === 0) {
             setLoader(false);
             frame.current.classList.add('on');
@@ -48,7 +50,7 @@ function Gallery() {
                 ++counter;
                 console.log(counter);
 
-                if (counter === imgs.length) {
+                if (counter === imgs.length - 2) {
                     setLoader(false);
                     frame.current.classList.add('on');
                     enableEvent.current = true;

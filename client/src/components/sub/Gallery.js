@@ -17,8 +17,10 @@ function Gallery() {
     const frame = useRef(null);
     // const counter = useRef(0);
     const [Loader, setLoader] = useState(true);
-
     const [Items, setItems] = useState([]);
+    const [Index, setIndex] = useState(0);
+
+
     const getFlickr = async (opt) => {
         counter.current = 0;
         let counter = 0;
@@ -132,7 +134,13 @@ function Gallery() {
                             return (
                                 <article key={idx}>
                                     <div className='inner'>
-                                        <div className='pic' onClick={() => openModal.current.open()}>
+                                        <div
+                                            className='pic'
+                                            onClick={() => {
+                                                openModal.current.open();
+                                                setIndex(idx);
+                                            }}
+                                        >
                                             <img src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`} alt={item.title} />
                                         </div>
                                         <h2>{item.title}</h2>
@@ -164,7 +172,7 @@ function Gallery() {
             </Layout>
 
             <Modal ref={openModal}>
-                <img src={`https://live.staticflickr.com/${Items[0]?.server}/${Items[0]?.id}_${Items[0]?.secret}_b.jpg`} alt={Items[0]?.title} />
+                <img src={`https://live.staticflickr.com/${Items[Index]?.server}/${Items[Index]?.id}_${Items[Index]?.secret}_b.jpg`} alt={Items[Index]?.title} />
             </Modal>
         </>
     );

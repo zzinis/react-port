@@ -144,11 +144,14 @@ function Gallery() {
                                         <div
                                             className='pic'
                                             onClick={() => {
-                                                openModal.current.open();
+                                                openModal.current?.open();
                                                 setIndex(idx);
                                             }}
                                         >
-                                            <img src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`} alt={item.title} />
+                                            <img
+                                                src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
+                                                alt={item.title}
+                                            />
                                         </div>
                                         <h2>{item.title}</h2>
                                         <div className='profile'>
@@ -179,7 +182,10 @@ function Gallery() {
             </Layout>
 
             <Modal ref={openModal}>
-                <img src={`https://live.staticflickr.com/${Items[Index]?.server}/${Items[Index]?.id}_${Items[Index]?.secret}_b.jpg`} alt={Items[Index]?.title} />
+                <img
+                    src={`https://live.staticflickr.com/${Items[Index]?.server}/${Items[Index]?.id}_${Items[Index]?.secret}_b.jpg`}
+                    alt={Items[Index]?.title}
+                />
             </Modal>
         </>
     );

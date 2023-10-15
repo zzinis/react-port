@@ -17,13 +17,19 @@ const Modal = forwardRef((props, ref) => {
                 <motion.aside
                     className='modal'
                     // ref={ref}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1, transition: { duration: 0.5 } }}
-                    exit={{ opacity: 0, transition: { duration: 0.5 } }}
-                >                    <div className='con'>{props.children}</div>
-                    <span className='close' onClick={() => setOpen(false)}>
-                        close
-                    </span>
+                    initial={{ opacity: 0, x: '100%' }}
+                    animate={{ opacity: 1, x: '0%', transition: { duration: 0.5 } }}
+                    exit={{ opacity: 0, scale: 0, transition: { duration: 0.5, delay: 0.5 } }}
+                >
+                    <div className='con'>{props.children}</div>
+                    <motion.span
+                        className='close'
+                        onClick={() => setOpen(false)}
+                        initial={{ opacity: 0, y: 100 }}
+                        animate={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.5 } }}
+                        exit={{ opacity: 0, x: -100, transition: { duration: 0.5, delay: 0 } }}
+                    >
+                    </motion.span>
                 </motion.aside>
             )}
         </AnimatePresence>

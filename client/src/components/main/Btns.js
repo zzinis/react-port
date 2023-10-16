@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
 
 function Btns({ setScrolled, setPos }) {
     console.log('btn Called');
@@ -7,7 +7,7 @@ function Btns({ setScrolled, setPos }) {
     const btnRef = useRef(null);
     const pos = useRef([]);
     const [Num, setNum] = useState(0);
-    const getPos = () => {
+    const getPos = useCallback(() => {
         console.log('getPos');
         pos.current = [];
         const secs = btnRef.current.parentElement.querySelectorAll('.myScroll');
@@ -16,8 +16,8 @@ function Btns({ setScrolled, setPos }) {
         setPos(pos.current);
 
 
-    };
-    const activation = () => {
+    }, [setPos]);
+    const activation = useCallback(() => {
         console.log('activation');
         const base = -window.innerHeight / 2;
         const scroll = window.scrollY;
@@ -36,7 +36,7 @@ function Btns({ setScrolled, setPos }) {
 
             }
         });
-    };
+    }, [setScrolled]);
 
     useEffect(() => {
         getPos();
@@ -53,7 +53,7 @@ function Btns({ setScrolled, setPos }) {
 
 
         };
-    }, []);
+    }, [getPos, activation]);
     return (
         <ul className='btnNavi' ref={btnRef}>
             {Array(Num)

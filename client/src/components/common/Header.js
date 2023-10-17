@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
-function Header() {
+function Header({ type }) {
 	const [isMenuOpen, setMenuOpen] = useState(false);
 	const toggleMenu = () => {
 		setMenuOpen(!isMenuOpen);
 	}
 
 	return (
-		<header id='header'>
+		<header id='header' className='{type}'>
 			<div className="inner">
 				<h1><a href="/">PORTFOLIO</a></h1>
 				<nav className={`menuWeb ${isMenuOpen ? 'on' : ''}`}>

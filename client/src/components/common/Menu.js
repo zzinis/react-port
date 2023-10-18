@@ -1,9 +1,12 @@
-import React from 'react'
+import { forwardRef, useImperativeHandle, useState } from 'react';
 
-function Menu() {
-    return (
-        <div>Menu</div>
-    )
-}
+const Menu = forwardRef((props, ref) => {
+    const [Open, setOpen] = useState(false);
 
-export default Menu
+    useImperativeHandle(ref, () => {
+        return { toggle: () => setOpen(!Open) };
+    });
+    return <nav>Menu</nav>;
+});
+
+export default Menu;

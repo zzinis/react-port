@@ -1,9 +1,10 @@
-import React, { useState, memo } from 'react';
+import React, { useState, memo, useRef } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 function Header({ type }) {
+
 	const [isMenuOpen, setMenuOpen] = useState(false);
 	const toggleMenu = () => {
 		setMenuOpen(!isMenuOpen);
@@ -180,7 +181,7 @@ function Header({ type }) {
 
 
 			</header>
-			<Menu />
+			<Menu ref={toggleMenu} />
 
 		</>
 

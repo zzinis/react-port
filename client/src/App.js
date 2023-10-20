@@ -1,7 +1,11 @@
 import './App.css';
+import { useRef } from 'react';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './components/common/Footer';
 import Header from './components/common/Header';
+import Menu from './components/common/Menu';
+
 import Department from './components/sub/Department';
 import Youtube from './components/sub/Youtube';
 import Coummunity from './components/sub/Coummunity';
@@ -16,6 +20,7 @@ import Join from './components/sub/Join';
 
 
 function App() {
+	const menu = useRef(null);
 	return (
 		<>
 			<BrowserRouter>

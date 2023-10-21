@@ -11,7 +11,7 @@ import { useRef, useEffect } from 'react';
 import Btns from './Btns';
 
 
-function Main() {
+function Main({ menu }) {
 	const [Scrolled, setScrolled] = useState(0);
 	const [Pos, setPos] = useState([]);
 
@@ -35,6 +35,8 @@ function Main() {
 	// }, []);
 	return (
 		<main>
+			<Header type={'main'} menu={menu} />
+
 			<Visual />
 			<Popup />
 			<News />

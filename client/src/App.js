@@ -35,6 +35,8 @@ function App() {
 					<Route path='/join' element={<Join />}></Route>
 				</Routes>
 				<Footer />
+				<Menu ref={menu} />
+
 			</BrowserRouter>
 		</>
 	);

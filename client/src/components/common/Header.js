@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
-function Header({ type }) {
+function Header({ type, menu }) {
 
 	const [isMenuOpen, setMenuOpen] = useState(false);
 	const toggleMenu = () => {
@@ -181,7 +181,7 @@ function Header({ type }) {
 
 
 			</header>
-			<Menu ref={toggleMenu} />
+
 
 		</>
 

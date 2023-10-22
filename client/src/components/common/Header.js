@@ -188,4 +188,4 @@ function Header({ type, menu }) {
 	);
 }
 
-export default Header;
+export default memo(Header);

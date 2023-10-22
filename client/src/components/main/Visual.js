@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import { FaPlayCircle, FaChevronRight } from 'react-icons/fa';
 
 
@@ -104,4 +104,4 @@ function Visual() {
 	);
 }
 
-export default Visual;
+export default memo(Visual);

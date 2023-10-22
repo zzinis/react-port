@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRef, useEffect, useState, useCallback } from 'react';
+import { useRef, useEffect, useState, useCallback, memo } from 'react';
 
 function Btns({ setScrolled, setPos }) {
     console.log('btn Called');
@@ -79,4 +79,4 @@ function Btns({ setScrolled, setPos }) {
     )
 }
 
-export default Btns
+export default memo(Btns);

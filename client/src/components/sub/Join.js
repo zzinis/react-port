@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../common/Layout'
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
 
@@ -10,17 +10,18 @@ function Join() {
     const radioGroup = useRef(null);
     const checkGroup = useRef(null);
 
-    const initVal = {
-        userid: '',
-        pwd1: '',
-        pwd2: '',
-        email: '',
-        gender: '',
-        interests: [],
-        edu: '',
-        comments: '',
-
-    };
+    const initVal = useMemo(() => {
+        return {
+            userid: '',
+            pwd1: '',
+            pwd2: '',
+            email: '',
+            gender: '',
+            interests: [],
+            edu: '',
+            comments: '',
+        };
+    }, []);
 
     const [Val, setVal] = useState(initVal);
     const [Err, setErr] = useState({});

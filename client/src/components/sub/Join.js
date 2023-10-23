@@ -81,7 +81,7 @@ function Join() {
         }
         return errs;
     };
-    const resetForm = () => {
+    const resetForm = useCallback(() => {
         const select = selectEl.current.options[0];
         const checks = checkGroup.current.querySelectorAll('input');
         const radios = radioGroup.current.querySelectorAll('input');
@@ -89,8 +89,7 @@ function Join() {
         checks.forEach((el) => (el.checked = false));
         radios.forEach((el) => (el.checked = false));
         setVal(initVal);
-    };
-
+    }, [initVal]);
     const handleSelect = (e) => {
         const { name, value } = e.target;
         setVal({ ...Val, [name]: value });
@@ -113,7 +112,8 @@ function Join() {
             resetForm();
 
         }
-    }, [Err]);
+    }, [Err, Submit, resetForm]);
+
     useEffect(() => {
         console.log(Val);
     }, [Val]);

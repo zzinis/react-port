@@ -22,7 +22,7 @@ function Location() {
     //     level: 3,
     // };
     const { kakao } = window;
-    const info = [
+    const info = useRef([
         {
             title: '강남역',
             latlng: new kakao.maps.LatLng(37.51100661425726, 127.06162026853143),
@@ -44,7 +44,7 @@ function Location() {
             imgSize: new kakao.maps.Size(232, 99),
             imgPos: { offset: new kakao.maps.Point(116, 99) },
         },
-    ];
+    ]);
     const option = { center: info[Index].latlng, level: 3 };
     const imgSrc = info[Index].imgSrc;
     const imgSize = info[Index].imgSize;
@@ -77,7 +77,12 @@ function Location() {
         mapInstance.addControl(new kakao.maps.ZoomControl(), kakao.maps.ControlPosition.RIGHT);
 
         const marker = new kakao.maps.Marker({
-            position: option.center,
+            position: info.current[Index].latlng,
+            image: new kakao.maps.MarkerImage(
+                info.current[Index].imgSrc,
+                info.current[Index].imgSize,
+                info.current[Index].imgPos
+            ),
         });
 
         marker.setMap(mapInstance);

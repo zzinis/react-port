@@ -72,7 +72,8 @@ function Location() {
     };
     useEffect(() => {
         container.current.innerHTML = '';
-        const mapInstance = new kakao.maps.Map(container.current, option);
+        const mapInstance = new kakao.maps.Map(container.current, { center: info.current[Index].latlng, level: 3 });
+
         mapInstance.addControl(new kakao.maps.MapTypeControl(), kakao.maps.ControlPosition.TOPRIGHT);
         mapInstance.addControl(new kakao.maps.ZoomControl(), kakao.maps.ControlPosition.RIGHT);
 
@@ -91,7 +92,7 @@ function Location() {
         const setCenter = () => {
             console.log('setCenter');
 
-            mapInstance.setCenter(info[Index].latlng);
+            mapInstance.setCenter(info.current[Index].latlng);
         };
 
         window.addEventListener('resize', setCenter);
@@ -111,7 +112,7 @@ function Location() {
             <div id='map' ref={container}></div>
             <button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic ON' : 'Traffic OFF'}</button>
             <ul className='branch'>
-                {info.map((el, idx) => {
+                {info.current.map((el, idx) => {
                     return (
                         <li key={idx} onClick={() => setIndex(idx)} className={idx === Index ? 'on' : ''}>
                             {el.title}

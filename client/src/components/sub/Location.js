@@ -99,13 +99,13 @@ function Location() {
         window.addEventListener('resize', setCenter);
         return () => window.removeEventListener('resize', setCenter);
 
-    }, [Index]);
+    }, [Index, kakao, marker]);
 
     useEffect(() => {
         Traffic
             ? Location?.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
             : Location?.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-    }, [Traffic]);
+    }, [Traffic, Location, kakao]);
     return (
         <Layout name={'Location'}>
             <h1>Location</h1>

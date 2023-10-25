@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../common/Layout'
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useMemo } from 'react';
 import emailjs from '@emailjs/browser';
 
 
@@ -76,15 +76,16 @@ function Location() {
 
         mapInstance.addControl(new kakao.maps.MapTypeControl(), kakao.maps.ControlPosition.TOPRIGHT);
         mapInstance.addControl(new kakao.maps.ZoomControl(), kakao.maps.ControlPosition.RIGHT);
-
-        const marker = new kakao.maps.Marker({
-            position: info.current[Index].latlng,
-            image: new kakao.maps.MarkerImage(
-                info.current[Index].imgSrc,
-                info.current[Index].imgSize,
-                info.current[Index].imgPos
-            ),
-        });
+        const marker = useMemo(() => {
+            return new kakao.maps.Marker({
+                position: info.current[Index].latlng,
+                image: new kakao.maps.MarkerImage(
+                    info.current[Index].imgSrc,
+                    info.current[Index].imgSize,
+                    info.current[Index].imgPos
+                ),
+            });
+        }, [Index, kakao]);
 
         marker.setMap(mapInstance);
         setLocation(mapInstance);

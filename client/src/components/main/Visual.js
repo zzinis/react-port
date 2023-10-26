@@ -2,6 +2,7 @@ import React, { useEffect, useState, memo } from 'react';
 import { FaPlayCircle, FaChevronRight } from 'react-icons/fa';
 
 
+
 function Visual() {
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const leftImages = ['img/b1.jpg', 'img/b5.jpg', 'img/c4.jpg'];
